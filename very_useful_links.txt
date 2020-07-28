@@ -1,1 +1,14 @@
+#  Google  Analytics , Browsers  Worldwide
+#  https://gs.statcounter.com/browser-market-share
+
+
+#  websites for online testing :
+# https://www.browserstack.com/
+# https://app.crossbrowsertesting.com/
+
+
+#  Crowdtesting -  https://www.passbrains.com/
+
+#  Freelance software testing -  https://www.utest.com/
+
 
