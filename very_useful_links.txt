@@ -1,14 +1,22 @@
-#  Google  Analytics , Browsers  Worldwide
+-  Google  Analytics , Browsers  Worldwide
 #  https://gs.statcounter.com/browser-market-share
 
 
-#  websites for online testing :
+-  websites for online testing :
 # https://www.browserstack.com/
 # https://app.crossbrowsertesting.com/
+
+-  Chrome DevTools Tutorial
+# https://developers.google.com/web/tools/chrome-devtools
+
+- HTTP Status Codes
+#  https://www.restapitutorial.com/httpstatuscodes.html
+
+- HTML tags
+# https://html5book.ru/html-tags
 
 
 #  Crowdtesting -  https://www.passbrains.com/
 
 #  Freelance software testing -  https://www.utest.com/
-
 
