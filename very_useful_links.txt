@@ -18,5 +18,12 @@
 
 #  Crowdtesting -  https://www.passbrains.com/
 
-#  Freelance software testing -  https://www.utest.com/
+#  Freelance software testing :
+-  https://www.utest.com/
+- https://www.usertesting.com/
 
+-  17 Sites That Will Pay You to Test Websites and Apps
+# https://www.swiftsalary.com/get-paid-testing-websites-and-apps/
+
+- How to write a WhatUsersDo test—for beginners
+# http://learn.whatusersdo.com/en/articles/907434-how-to-write-a-whatusersdo-test-for-beginners
