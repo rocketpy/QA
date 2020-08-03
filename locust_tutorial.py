@@ -1,7 +1,14 @@
 #  Locust ia an open source load testing tool
 #  DOCS:  https://docs.locust.io/en/stable/
+#  Very Important :  JMeter(Java) running in GUI mode for the same scenario takes almost in 30x more memory than a Locust script !!!
+
+#  Locust’s web interface - http://127.0.0.1:8089
+
+#  without using the web interface, use --headless
 
 #  pip install locust
+
+#  run the test saved as locustfile.py , in the terminal:  locust --host=http://127.0.0.1:8000
 
 #  creating a Performance Test 
 from locust import HttpLocust, TaskSet, task
