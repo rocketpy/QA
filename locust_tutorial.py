@@ -8,9 +8,11 @@
 
 #  pip install locust
 
+#  IF NOT Installed a Locust go to:  https://stackoverflow.com/questions/61592069/locust-is-not-installing-on-my-windows-10-for-load-testing 
+
 # to start locust in master mode:  locust -f my_locustfile.py --master
 
-#  run the test saved as locustfile.py , in the terminal:  locust --host=http://127.0.0.1:8000
+#  run the test saved as locustfile.py , in the terminal:  locust --host=http://127.0.0.1:8000 or  localhost:8089
 
 #  creating a Performance Test 
 from locust import HttpLocust, TaskSet, task
