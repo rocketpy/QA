@@ -3,11 +3,13 @@ import requests
 from selenium import webdriver
 
 
+#  taked from:  https://help.crossbrowsertesting.com/selenium-testing/getting-started/python/
+
 class SeleniumCBT(unittest.TestCase):
     def setUp(self):
 
-        self.username = "user@email.com"  # need sign_in in https://crossbrowsertesting.com/
-        self.authkey  = "secret_key"  # need sign_in in https://crossbrowsertesting.com/
+        self.username = "user@email.com"  # need be sign_in in https://crossbrowsertesting.com/
+        self.authkey  = "secret_key"  # need be sign_in in https://crossbrowsertesting.com/
 
         self.api_session = requests.Session()
         self.api_session.auth = (self.username,self.authkey)
@@ -32,6 +34,29 @@ class SeleniumCBT(unittest.TestCase):
             self.test_result = 'pass'
             self.driver.quit()
        
+
+if __name__ == '__main__':
+    unittest.main()
+
+    
+#  basic example by unittest (taked from : https://docs.python.org/2.7/library/unittest.html)
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
 
 if __name__ == '__main__':
     unittest.main()
