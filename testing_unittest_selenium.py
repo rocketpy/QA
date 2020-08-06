@@ -60,3 +60,17 @@ class TestStringMethods(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+    
+#  running tests in Parallel
+from queue import Queue
+from threading import Thread
+from selenium import webdriver
+import time
+
+
+USERNAME = "user@email.com"
+API_KEY = "12345"
+
+q = Queue(maxsize=0)
+
