@@ -84,3 +84,19 @@ for browser in browsers:
     q.put(browser)
 
 num_threads = 10
+
+def test_runner(q):
+    while q.empty() is False:
+        try:
+            browser = q.get()
+            print("%s: Starting" % browser["browser_api_name"])
+            driver = webdriver.Remote(desired_capabilities=browser, command_executor="http://%s:%s@hub.crossbrowsertesting.com:80/wd/hub" % (USERNAME, API_KEY) )
+            print("%s: Getting page" % browser["browser_api_name"])
+            driver.get("http://crossbrowsertesting.com")
+            print("%s: Quitting browser and ending test" % browser["browser_api_name"])
+        except:
+            print("%s: Error" % browser["browser_api_name"])
+        finally:                    
+            driver.quit()
+            time.sleep(15)
+            q.task_done()
