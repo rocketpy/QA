@@ -74,3 +74,13 @@ API_KEY = "12345"
 
 q = Queue(maxsize=0)
 
+browsers = [
+  {"os_api_name": "Win7x64-C2", "browser_api_name": "IE10", "name": "Python Parallel"},
+  {"os_api_name": "Win8.1", "browser_api_name": "Chrome43x64", "name": "Python Parallel"},
+]
+
+# put all of the browsers into the queue before pooling workers
+for browser in browsers:
+    q.put(browser)
+
+num_threads = 10
