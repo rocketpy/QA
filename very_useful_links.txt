@@ -27,3 +27,9 @@
 
 - How to write a WhatUsersDo test—for beginners
 # http://learn.whatusersdo.com/en/articles/907434-how-to-write-a-whatusersdo-test-for-beginners
+
+
+#  SQL - Links:
+- https://sqlbolt.com/
+- https://www.w3schools.com/sql/sql_intro.asp
+- http://www.h2database.com/html/functions.html
