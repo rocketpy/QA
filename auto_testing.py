@@ -23,4 +23,10 @@ class MyTestClass(BaseCase):
         self.highlight("h2")
         
         h3 = "h3:nth-of-type(%s)" 
+        
+        self.assert_text('Some text ...', h3 % "1")
+        self.assert_text('Some text ...', h3 % "2")
+        self.assert_text('Some text ...', h3 % "3")
+        self.assert_text('Some text ...', h3 % "4")
+        self.assert_text('Some text ...', h3 % "5")
                             
