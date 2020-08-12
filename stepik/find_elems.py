@@ -1,12 +1,17 @@
+import math
 import time
 from selenium import webdriver
  
 
-LINK = "http://suninjuly.github.io/simple_form_find_task.html"
+LINK = "http://suninjuly.github.io/find_link_text"
+# "http://suninjuly.github.io/simple_form_find_task.html"
+
+browser = webdriver.Chrome()
 
 try:
-    browser = webdriver.Chrome()
+    # browser = webdriver.Chrome()  
     browser.get(LINK)
+    input1 = browser.find_element_by_link_text("224592").click()
 
     input1 = browser.find_element_by_tag_name("input")
     input1.send_keys("Ivan")
@@ -23,3 +28,4 @@ finally:
     time.sleep(30)
 
     browser.quit()
+
