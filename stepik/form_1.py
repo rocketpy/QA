@@ -5,7 +5,7 @@ from selenium import webdriver
 browser = webdriver.Chrome()
 
 try: 
-    LINK = "http://suninjuly.github.io/registration1.html"
+    LINK = "http://suninjuly.github.io/registration2.html"
     # browser = webdriver.Chrome()
     browser.get(LINK)
     
@@ -20,13 +20,10 @@ try:
     time.sleep(3)
 
     welcome_text_elt = browser.find_element_by_tag_name("h1")
-   
     welcome_text = welcome_text_elt.text
 
     assert "Congratulations! You have successfully registered!" == welcome_text
 
 finally:
-   
     time.sleep(10)
-    
     browser.quit()
