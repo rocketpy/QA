@@ -1,5 +1,12 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+# driver.find_elements(By.CSS_SELECTOR, "button.submit")  # for searching elements , or use find_elements_by_ ()
+
+#  VERY Important , if find_element() NOT find elem , reise NoSuchElementException  !!!
+#  But if find_elements() NOTHING find , he will return empty list 
 
 
 browser.get("https://fake-shop.com/book1.html")
