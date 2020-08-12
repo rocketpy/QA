@@ -1,6 +1,8 @@
 -  Google  Analytics , Browsers  Worldwide
 #  https://gs.statcounter.com/browser-market-share
 
+#  Selenium , Locating Elements: https://selenium-python.readthedocs.io/locating-elements.html
+
 
 -  websites for online testing :
 # https://www.browserstack.com/
