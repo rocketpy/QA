@@ -1,6 +1,5 @@
 #  docs: https://pypi.org/project/seleniumbase/
-
-#  pip install seleniumbas
+#  pip install seleniumbase
 
 from seleniumbase import BaseCase
 
