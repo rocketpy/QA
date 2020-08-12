@@ -1,4 +1,3 @@
-import math
 import time
 from selenium import webdriver
  
@@ -9,7 +8,7 @@ LINK = "http://suninjuly.github.io/find_link_text"
 browser = webdriver.Chrome()
 
 try:
-    # browser = webdriver.Chrome()  
+    # browser = webdriver.Chrome()
     browser.get(LINK)
     input1 = browser.find_element_by_link_text("224592").click()
 
