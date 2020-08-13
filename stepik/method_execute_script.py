@@ -1,11 +1,12 @@
 import time
+import math
 from selenium import webdriver
 
 
 LINK = "http://suninjuly.github.io/execute_script.html"
 
 browser = webdriver.Chrome()
-browser.get(LINK)
+
 """
 # make a simple example with alert on web page
 browser.execute_script("alert('Robots at work');")
@@ -17,14 +18,16 @@ browser.execute_script("document.title='Script executing';alert('Robots at work'
 """
 
 try:
+    browser.get(LINK)
+    
     def calc(x):
         return str(math.log(abs(12 * math.sin(int(x)))))
       
     x = browser.find_element_by_id('input_value').text
     y = calc(int(x))
     
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") 
-    time.sleep(1)
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    time.sleep(2)
     
     input_answer = browser.find_element_by_id("answer")
     input_answer.send_keys(y)
@@ -39,5 +42,5 @@ try:
     button.click()
 
 finally:
-    time.sleep(5)
+    time.sleep(7)
     browser.quit()
