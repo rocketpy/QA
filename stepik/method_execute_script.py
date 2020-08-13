@@ -19,7 +19,7 @@ browser.execute_script("document.title='Script executing';alert('Robots at work'
 
 try:
     browser.get(LINK)
-    
+
     def calc(x):
         return str(math.log(abs(12 * math.sin(int(x)))))
       
