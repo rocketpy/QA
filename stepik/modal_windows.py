@@ -40,14 +40,14 @@ try:
     first_button.click()
     
     alert_window = browser.switch_to.alert
-    alert.accept()
+    alert_window.accept()
     
-    x_element = browser.find_element_by_class_name("nowrap")
+    x_element = browser.find_element_by_id("input_value")
     x = x_element.text
-    y = calc(x)
+    y = calc(int(x))
     
     input_answer = browser.find_element_by_class_name("form-control")
-    input_answer.send_keys(y)
+    input_answer.send_keys(str(y))
     
     button = browser.find_element_by_css_selector("button.btn")
     button.click()
