@@ -1,5 +1,9 @@
+import math
+import time
+from selenium import webdriver
 
-
+ 
+"""
 # call modal window by JS
 alert('Hello!');
 
@@ -21,3 +25,7 @@ confirm.dismiss()  # press 'Cancel'
 prompt = browser.switch_to.alert
 prompt.send_keys("My answer")
 prompt.accept()
+"""
+
+LINK = "http://suninjuly.github.io/alert_accept.html"
+browser = webdriver.Chrome()
