@@ -1,14 +1,13 @@
-import os 
-import math
+import os
 import time
 from selenium import webdriver
 
 
 current_dir = os.path.abspath(os.path.dirname(__file__))    # get cwd (current directory)
-file_path = os.path.join(current_dir, 'file.txt')           # adding to this path a file name
-# element.send_keys(file_path)
+file_path = os.path.join(current_dir, 'file_test.txt')           # adding to this path a file name
 
-LINK = "http://suninjuly.github.io/get_attribute.html"
+
+LINK = "http://suninjuly.github.io/file_input.html"
 
 browser = webdriver.Chrome()
 
@@ -23,9 +22,12 @@ try:
     
     email = browser.find_element_by_xpath("/html/body/div/form/div/input[3]")
     email.send_keys("abc123@gmail.com")
-    
-    upload_file = browser.find_element_by_id("file")
-    upload_file.send_keys("file_path")
+
+    current_dir = os.path.abspath(os.path.dirname(__file__))  # get cwd (current directory)
+    file_path = os.path.join(current_dir, 'file_test.txt')
+
+    upload_file = browser.find_element_by_xpath("//*[@id='file']")
+    upload_file.send_keys(file_path)  # no need use click
 
     submit_button = browser.find_element_by_css_selector("button.btn")
     submit_button.click()
