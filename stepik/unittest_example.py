@@ -13,11 +13,10 @@ class TestAbs(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 """
-    
-import unittest
+
 import time
+import unittest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
  
 
 LINK_1 = "http://suninjuly.github.io/registration1.html"
@@ -25,44 +24,22 @@ LINK_2 = "http://suninjuly.github.io/registration2.html"
 
 browser = webdriver.Chrome()
 
-try:
-    browser.get(LINK_1)
-    # browser.get(LINK_2)
-
-    input1 = browser.find_element_by_class_name("form-control.first")
-    input1.send_keys("John")
-    input2 = browser.find_element_by_css_selector("div.first_block > div.form-group.second_class > input")
-    input2.send_keys("Doe")
-    input3 = browser.find_element_by_xpath("/html/body/div/form/div[1]/div[3]/input")
-    input3.send_keys("abc123@gmail.com")
-    # input4 = browser.find_element_by_id("country")
-    # input4.send_keys("")
-    button = browser.find_element_by_css_selector("button.btn")
-    button.click()
-
-finally:
-    time.sleep(3)
-    browser.quit()
-
 
 class TestForms(unittest.TestCase):
     def test_form_1(self):
         browser.get(LINK_1)
-
-        input1 = browser.find_element_by_class_name("form-control.first")
-        input1.send_keys("John")
-        input2 = browser.find_element_by_css_selector("div.first_block > div.form-group.second_class > input")
-        input2.send_keys("Doe")
-        input3 = browser.find_element_by_xpath("/html/body/div/form/div[1]/div[3]/input")
-        input3.send_keys("abc123@gmail.com")
-        button = browser.find_element_by_css_selector("button.btn")
-        button.click()
-        
+        input_1 = browser.find_element_by_class_name("form-control.first")
+        input_1.send_keys("John")
+        input_2 = browser.find_element_by_css_selector("div.first_block > div.form-group.second_class > input")
+        input_2.send_keys("Doe")
+        input_3 = browser.find_element_by_xpath("/html/body/div/form/div[1]/div[3]/input")
+        input_3.send_keys("abc123@gmail.com")
+        button_1 = browser.find_element_by_css_selector("button.btn")
+        button_1.click()
         time.sleep(3)
-        browser.quit()
-        
-        self.assertEqual(, , "Should be ...")
-        
+        # browser.quit()
+        self.assertEqual(input_2, input_2, "NoSuchElementException ")
+
     def test_form_2(self):
         browser.get(LINK_2)
         input1 = browser.find_element_by_class_name("form-control.first")
@@ -73,13 +50,10 @@ class TestForms(unittest.TestCase):
         input3.send_keys("abc123@gmail.com")
         button = browser.find_element_by_css_selector("button.btn")
         button.click()
-        
         time.sleep(3)
         browser.quit()
-        
-        self.assertEqual(, , "Should be ...")
+        self.assertEqual(input2, input2, "NoSuchElementException")
         
         
 if __name__ == "__main__":
     unittest.main()
-    
