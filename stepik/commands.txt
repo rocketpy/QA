@@ -7,3 +7,10 @@ C:\Users\user> copy C:\Users\user\Downloads\get_method.py c:\Users\user\selenium
 C:\Users\user> environments\selenium_env\Scripts\activate.bat
 
 (selenium_env) C:\Users\user>python c:\Users\user\selenium_course\get_method.py
+
+
+#  working with PIP FREEZE
+pip freeze > requirements.txt    # all modules to file.txt
+
+#  from file.txt get all modules
+pip install -r requirements.txt
