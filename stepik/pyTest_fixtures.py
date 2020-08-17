@@ -1,3 +1,5 @@
+#  docs:  https://docs.pytest.org/en/latest/fixture.html
+
 #  use command to run file :  pytest -s pyTest_fixtures.py
 #  flag -s  need for show info from print()  in console
 
