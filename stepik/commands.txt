@@ -1,11 +1,11 @@
 # activate virtual_env and run .py file in cmd 
 
+python -m venv selenium_env
+source selenium_env/bin/activate  # activating venv
+
 c:\Users\user> mkdir selenium_course
-
 C:\Users\user> copy C:\Users\user\Downloads\get_method.py c:\Users\user\selenium_course
-
 C:\Users\user> environments\selenium_env\Scripts\activate.bat
-
 (selenium_env) C:\Users\user>python c:\Users\user\selenium_course\get_method.py
 
 
