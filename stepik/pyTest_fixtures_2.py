@@ -11,7 +11,10 @@ link = "http://selenium1py.pythonanywhere.com/"
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Chrome()
-    return browser
+    yield browser
+    # this code will be work after all tests !!!
+    print("\nquit browser..")
+    browser.quit()
 
 
 class TestMainPage1():
