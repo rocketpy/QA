@@ -15,6 +15,11 @@ def browser():
     yield browser
     print("\nquit browser..")
     browser.quit()
+    
+@pytest.fixture(autouse=True)  #  autouse=True , it means , fixture need use for every one test BE CAREFUL with this !!!
+def prepare_data():
+    print()
+    print("preparing some critical data for every test")
 
 
 class TestMainPage1():
