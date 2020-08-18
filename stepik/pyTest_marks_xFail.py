@@ -1,5 +1,7 @@
 #  for to mark some test like 'failed' and passing him , need use:  @pytest.mark.xfail 
 
+#  when bug will be fixed , in console we will see: XPASS - 'unexpectedly passing' , after this need remove @pytest.mark.xfail
+
 #  for run test file use: pytest -v test_file_name.py
 
 import pytest
@@ -32,3 +34,12 @@ class TestMainPage1():
     def test_guest_should_see_search_button_on_the_main_page(self, browser):
         browser.get(link)
         browser.find_element_by_css_selector("button.favorite")
+        
+    """
+    #  when we use 'reason' , need use command:  pytest -rx -v test_file_name.py
+    
+    @pytest.mark.xfail(reason="fixing this bug right now")  #  here we added parameter: reason
+    def test_guest_should_see_search_button_on_the_main_page(self, browser):
+        browser.get(link)
+        browser.find_element_by_css_selector("button.favorite")
+    """
