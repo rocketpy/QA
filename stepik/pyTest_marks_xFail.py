@@ -1,3 +1,4 @@
+#  docs about Skip and xfail:  https://docs.pytest.org/en/latest/skipping.html
 #  for to mark some test like 'failed' and passing him , need use:  @pytest.mark.xfail 
 
 #  when bug will be fixed , in console we will see: XPASS - 'unexpectedly passing' , after this need remove @pytest.mark.xfail
