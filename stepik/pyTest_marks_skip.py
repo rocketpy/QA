@@ -1,3 +1,4 @@
+#  docs about Skip and xfail:  https://docs.pytest.org/en/latest/skipping.html
 #  for skip some test using : @pytest.mark.skip  , NO NEED add this to pytest.ini file  
 
 import pytest
