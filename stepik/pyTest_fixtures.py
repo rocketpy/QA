@@ -1,5 +1,7 @@
 #  docs:  https://docs.pytest.org/en/latest/fixture.html
 
+#  фикстуры, описанные в файле conftest.py в корневой директории проекта, могут вызываться в любом другом файле с тестами !!!
+
 #  use command to run file :  pytest -s pyTest_fixtures.py
 #  flag -s  need for show info from print()  in console
 
