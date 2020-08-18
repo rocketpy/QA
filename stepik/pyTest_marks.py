@@ -1,4 +1,10 @@
 #  in this example we separeting a tests, to smoke и regression parts  !!!
+
+# to run a file with tests:  pytest -s -v -m smoke test_example.py
+#  -m , use for marks
+#  -v , verbose info
+
+
 import pytest
 from selenium import webdriver
 
