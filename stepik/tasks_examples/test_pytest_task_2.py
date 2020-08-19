@@ -4,6 +4,8 @@ import pytest
 from selenium import webdriver
 
 
+#  pytest -s -v test_pytest_task_2.py
+
 LINKS = ['https://stepik.org/lesson/236895/step/1',
          'https://stepik.org/lesson/236896/step/1',
          'https://stepik.org/lesson/236897/step/1',
@@ -15,7 +17,7 @@ LINKS = ['https://stepik.org/lesson/236895/step/1',
 
 
 @pytest.fixture(scope="class")
-def driver_def():
+def driver():
     print("\nStart browser for test..")
     driver = webdriver.Chrome()
     driver.implicitly_wait(5)
@@ -29,10 +31,11 @@ class TestMainPage:
     def test_(self, driver, link):
         lnk = f"{link}"
         driver.get(lnk)
-        driver.implicitly_wait(5)
-        answer = math.log(int(time.time()))
-        driver.browser.find_element_by_xpath("//*[@id='ember94']").send_keys(answer)
+        driver.implicitly_wait(6)
+        answer = math.log(int(time.time() - 29.0))
+        driver.find_element_by_class_name("textarea.string-quiz__textarea.ember-text-area.ember-view").send_keys(str(answer))
+
         driver.find_element_by_class_name("submit-submission").click()
-        result = driver.find_element_by_xpath("//*[@id='ember122']/pre").text
-        assert result == "Correct!", "Should be absolute value of a number"
-        # print(result)
+        result = driver.find_element_by_class_name("smart-hints__hint").text
+        cor = "Correct!"
+        assert result == cor, "Should be a Correct!"
