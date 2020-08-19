@@ -9,6 +9,7 @@
 def test_abs_1():
     assert abs(-42) == 42, "Should be absolute value of a number"  #  return True
 
+
 def test_abs_2():
     assert abs(-42) == -42, "Should be absolute value of a number"   # return False
     

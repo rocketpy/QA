@@ -13,7 +13,8 @@ def browser():
     print("\nquit browser..")
     browser.quit()
 
-@pytest.mark.parametrize('language', ["ru", "en-gb"])  #  here we use parametrize()
+
+@pytest.mark.parametrize('language', ["ru", "en-gb"])  # here we use parametrize()
 def test_guest_should_see_login_link(browser, language):
     link = f"http://selenium1py.pythonanywhere.com/{language}/"
     browser.get(link)
@@ -30,5 +31,6 @@ class TestLogin:
         # этот тест запустится 2 раза
 
     def test_guest_should_see_navbar_element(self, browser, language):
+        pass
         # this test must be run twice
 
