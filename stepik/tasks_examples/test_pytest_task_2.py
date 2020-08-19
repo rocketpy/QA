@@ -14,8 +14,8 @@ LINKS = ['https://stepik.org/lesson/236895/step/1',
          'https://stepik.org/lesson/236905/step/1']
 
 
-@pytest.fixture(scope="function")
-def driver():
+@pytest.fixture(scope="class")
+def driver_def():
     print("\nStart browser for test..")
     driver = webdriver.Chrome()
     driver.implicitly_wait(5)
@@ -27,12 +27,12 @@ def driver():
 class TestMainPage:
     @pytest.mark.parametrize('link', LINKS)
     def test_(self, driver, link):
-        for lnk in link:
-            driver.get(lnk)
-            driver.implicitly_wait(5)
-            answer = math.log(int(time.time()))
-            driver.browser.find_element_by_xpath("//*[@id='ember94']").send_keys(answer)
-            driver.find_element_by_class_name("submit-submission").click()
-            result = driver.find_element_by_xpath("//*[@id='ember122']/pre").text
-            assert result == "Correct!", "Should be absolute value of a number"
-            # print(result)
+        lnk = f"{link}"
+        driver.get(lnk)
+        driver.implicitly_wait(5)
+        answer = math.log(int(time.time()))
+        driver.browser.find_element_by_xpath("//*[@id='ember94']").send_keys(answer)
+        driver.find_element_by_class_name("submit-submission").click()
+        result = driver.find_element_by_xpath("//*[@id='ember122']/pre").text
+        assert result == "Correct!", "Should be absolute value of a number"
+        # print(result)
