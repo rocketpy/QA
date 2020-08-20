@@ -1,4 +1,6 @@
 # for run a test with firefox browser:   pytest -s -v --browser_name=firefox test_file_name.py
+#  https://github.com/mozilla/geckodriver/releases  - get a driver here
+# need add geckodriver to PATH , create dir in C:/geckodriver , put here geckodriver.exe
 
 from selenium import webdriver
 
