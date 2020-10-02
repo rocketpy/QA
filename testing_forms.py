@@ -23,7 +23,7 @@ TC_10 = 'vasya_pupkin@@@gmail.com'
 TC_11 = 'a'
 TC_12 = '1'
 TC_13 = '<script>document.body.style.backgroundColor = "#000";</script>'
-TC_14 = ''
-TC_15 = ''
+TC_14 = '$detail_id=$_GET['detail'];'
+TC_15 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'
 
 driver.get("https://...")
