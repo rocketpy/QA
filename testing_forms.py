@@ -9,17 +9,21 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
+#  test cases
 TC_1 = ''
-TC_2 = ''
-TC_3 = ''
-TC_4 = ''
-TC_5 = ''
-TC_6 = ''
-TC_7 = ''
-TC_8 = ''
-TC_9 = ''
-TC_10 = ''
-TC_11 = ''
-TC_12 = ''
+TC_2 = '   12345abcABC'
+TC_3 = '1234567890'
+TC_4 = 'abcdefgh'
+TC_5 = 'abcde   fgh'
+TC_6 = 'abcdefgh   '
+TC_7 = '<span class="text-gray">No suggested jump to results</span>'
+TC_8 = '!@#$%^&*()_+{}{}{}{:":"?><>'
+TC_9 = 'ABCDEFGH'
+TC_10 = 'vasya_pupkin@@@gmail.com'
+TC_11 = 'a'
+TC_12 = '1'
+TC_13 = '<script>document.body.style.backgroundColor = "#000";</script>'
+TC_14 = ''
+TC_15 = ''
 
 driver.get("https://...")
