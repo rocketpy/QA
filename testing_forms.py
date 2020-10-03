@@ -32,19 +32,22 @@ TC_12 = '1'
 TC_13 = '<script>document.body.style.backgroundColor = "#000";</script>'
 TC_14 = '$detail_id=$_GET['detail'];'
 TC_15 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'
-TC = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+TC_16 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111'
 
 driver.get("https://...")
 
-driver.find_element_by_xpath("").click()
-sleep(1)
+name_field = driver.find_element_by_xpath('')  # input field 
+name_field.send_keys("Abcdefgh")
 
-driver.find_element_by_xpath("").click()
-sleep(1)
+submit_button = driver.find_element_by_xpath('')  # button of search field
+submit_button.click()
 
-driver.find_element_by_xpath("").click()
-sleep(1)
+# driver.find_element_by_xpath("").click()
 
-driver.find_element_by_xpath("").click()
-sleep(1)
 
+#driver.quit()
