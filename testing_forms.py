@@ -18,23 +18,24 @@ chrome = webdriver.Chrome(chrome_options=options)
 # CONFIRM_PASSWORD = PASSWORD
 
 #  test cases for fields
-TC_1 = ''
-TC_2 = '   12345abcABC'
+TC_1 = ''  #  Empty value
+TC_2 = '   12345abcABC'  #  Space values at the beginning
 TC_3 = '1234567890'
 TC_4 = 'abcdefgh'
-TC_5 = 'abcde   fgh'
-TC_6 = 'abcdefgh   '
-TC_7 = '<span class="text-gray">No suggested jump to results</span>'
-TC_8 = '!@#$%^&*()_+{}{}{}{:":"?><>'
+TC_5 = 'abcde   fgh'  #  Space in the middle
+TC_6 = 'abcdefgh   '  #  Space values at the end
+TC_7 = '<span class="text-gray">No suggested jump to results</span>'  #  Using HTML tag's
+TC_8 = '!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
 TC_9 = 'ABCDEFGH'
 TC_10 = 'vasya_pupkin@@@gmail.com'
 TC_11 = 'a'
 TC_12 = '1'
-TC_13 = '               '
-TC_14 = '<script>document.body.style.backgroundColor = "#000";</script>'
-TC_15 = '$detail_id=$_GET['detail'];'
-TC_16 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'
-TC_17 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+TC_13 = '               '  #  Space
+TC_14 = 'भारतभारतभारतभारत网络网络网络网络'  #  Non ASCII
+TC_15 = '<script>document.body.style.backgroundColor = "#000";</script>'
+TC_16 = '$detail_id=$_GET['detail'];'
+TC_17 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'  #  Basic XSS, Basic Sql injection, Average value
+TC_18 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
