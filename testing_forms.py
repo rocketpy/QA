@@ -1,3 +1,4 @@
+from time import sleep
 from selenium import webdriver
 
 
@@ -9,7 +10,13 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
-#  test cases
+# NAME = ""
+# SURNAME = ""
+# EMAIL = ""
+# LOGIN = ""
+# PASSWORD = ""
+
+#  test cases for fields
 TC_1 = ''
 TC_2 = '   12345abcABC'
 TC_3 = '1234567890'
@@ -25,5 +32,19 @@ TC_12 = '1'
 TC_13 = '<script>document.body.style.backgroundColor = "#000";</script>'
 TC_14 = '$detail_id=$_GET['detail'];'
 TC_15 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'
+TC = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 driver.get("https://...")
+
+driver.find_element_by_xpath("").click()
+sleep(1)
+
+driver.find_element_by_xpath("").click()
+sleep(1)
+
+driver.find_element_by_xpath("").click()
+sleep(1)
+
+driver.find_element_by_xpath("").click()
+sleep(1)
+
