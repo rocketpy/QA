@@ -10,11 +10,12 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
-# NAME = ""
-# SURNAME = ""
-# EMAIL = ""
+# NAME = "Vasya"
+# SURNAME = "Pupkin"
+# EMAIL = "vasya_pupkin@gmail.com"
 # LOGIN = ""
 # PASSWORD = ""
+# CINFIRM_PASSWORD = PASSWORD
 
 #  test cases for fields
 TC_1 = ''
@@ -44,10 +45,21 @@ driver.get("https://...")
 name_field = driver.find_element_by_xpath('')  # input field 
 name_field.send_keys("Abcdefgh")
 
-submit_button = driver.find_element_by_xpath('')  # button of search field
+surname_field = driver.find_element_by_xpath('')  # input field 
+surname_field.send_keys("Abcdefgh")
+
+email_field = driver.find_element_by_xpath('')  # input field 
+email_field.send_keys("Abcdefgh")
+
+password_field = driver.find_element_by_xpath('')  # input field 
+password_field.send_keys("Abcdefgh")
+
+submit_button = driver.find_element_by_xpath('')  # submit button
 submit_button.click()
 
-# driver.find_element_by_xpath("").click()
+confirm_password_field = driver.find_element_by_xpath('')  # input field 
+confirm_password_field.send_keys("Abcdefgh")
 
+# driver.find_element_by_xpath("").click()
 
 #driver.quit()
