@@ -42,10 +42,15 @@ TC_18 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111'
 
-driver.get("https://...")
+cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
+             TC_11, TC_12, TC_13, TC_14, TC_15, TC_16, TC_17, TC_18]         
+         
+# driver.get("https://...")
 
 def auth_form():
     try:
+        driver.get("https://...")
+
         name_field = driver.find_element_by_xpath('')  # input field 
         name_field.send_keys("Abcdefgh")
 
@@ -67,7 +72,6 @@ def auth_form():
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
-# driver.find_element_by_xpath("").click()
 #driver.quit()
 
 
