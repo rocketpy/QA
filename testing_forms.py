@@ -44,7 +44,9 @@ TC_18 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx111111111111111111111
 
 driver.get("https://...")
 
-name_field = driver.find_element_by_xpath('')  # input field 
+def auth_form():
+    try:
+        name_field = driver.find_element_by_xpath('')  # input field 
 name_field.send_keys("Abcdefgh")
 
 surname_field = driver.find_element_by_xpath('')  # input field 
@@ -65,3 +67,9 @@ submit_button.click()
 # driver.find_element_by_xpath("").click()
 
 #driver.quit()
+
+
+if __name__ == '__main__':
+    auth_form()
+    
+
