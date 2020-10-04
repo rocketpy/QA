@@ -47,25 +47,27 @@ driver.get("https://...")
 def auth_form():
     try:
         name_field = driver.find_element_by_xpath('')  # input field 
-name_field.send_keys("Abcdefgh")
+        name_field.send_keys("Abcdefgh")
 
-surname_field = driver.find_element_by_xpath('')  # input field 
-surname_field.send_keys("Abcdefgh")
+        surname_field = driver.find_element_by_xpath('')  # input field 
+        surname_field.send_keys("Abcdefgh")
 
-email_field = driver.find_element_by_xpath('')  # input field 
-email_field.send_keys("Abcdefgh")
+        email_field = driver.find_element_by_xpath('')  # input field 
+        email_field.send_keys("Abcdefgh")
 
-password_field = driver.find_element_by_xpath('')  # input field 
-password_field.send_keys("Abcdefgh")
+        password_field = driver.find_element_by_xpath('')  # input field 
+        password_field.send_keys("Abcdefgh")
 
-confirm_password_field = driver.find_element_by_xpath('')  # input field 
-confirm_password_field.send_keys("Abcdefgh")
+        confirm_password_field = driver.find_element_by_xpath('')  # input field 
+        confirm_password_field.send_keys("Abcdefgh")
 
-submit_button = driver.find_element_by_xpath('')  # submit button
-submit_button.click()
+        submit_button = driver.find_element_by_xpath('')  # submit button
+        submit_button.click()
+        
+    except NoSuchElementException:
+        print("Oooops , we have some problem !")
 
 # driver.find_element_by_xpath("").click()
-
 #driver.quit()
 
 
