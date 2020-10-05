@@ -47,6 +47,12 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
          
 # driver.get("https://...")
 
+
+def auth_form_valid():
+    try:
+        driver.get("https://...")
+
+
 def auth_form():
     try:
         driver.get("https://...")
