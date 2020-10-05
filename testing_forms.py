@@ -13,24 +13,24 @@ chrome = webdriver.Chrome(chrome_options=options)
 #  CONSTS for validation
 NAME = "Vasya"
 SURNAME = "Pupkin"
-EMAIL = "vasya_pupkin@gmail.com"
-LOGIN = ""
-PASSWORD = ""
+EMAIL = "vasya_pupkin@gmail.com"  # it's a fake email
+LOGIN = "v_pupkin"
+PASSWORD = "12345qwerty"
 CONFIRM_PASSWORD = PASSWORD
 
 #  test cases for fields
 TC_1 = ''  #  Empty value
 TC_2 = '   12345abcABC'  #  Space values at the beginning
-TC_3 = '1234567890'
-TC_4 = 'abcdefgh'
+TC_3 = '1234567890'  # numerics
+TC_4 = 'abcdefgh'  # lowercase alphabet
 TC_5 = 'abcde   fgh'  #  Space in the middle
 TC_6 = 'abcdefgh   '  #  Space values at the end
 TC_7 = '<span class="text-gray">No suggested jump to results</span>'  #  Using HTML tag's
 TC_8 = '!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
-TC_9 = 'ABCDEFGH'
-TC_10 = 'vasya_pupkin@@@gmail.com'
-TC_11 = 'a'
-TC_12 = '1'
+TC_9 = 'ABCDEFGH'  # uppercase alphabet
+TC_10 = 'vasya_pupkin@@@gmail.com'  #  triple @@@
+TC_11 = 'a'  # min alphabet value
+TC_12 = '1'  # min numeric value
 TC_13 = '               '  #  Space
 TC_14 = 'भारतभारतभारतभारत网络网络网络网络'  #  Non ASCII
 TC_15 = '<script>document.body.style.backgroundColor = "#000";</script>'
@@ -103,7 +103,7 @@ def auth_form():
 
 
 if __name__ == '__main__':
-    auth_form_valid()
+    auth_form_valid()  # first checking a valid data
     auth_form()
     
 
