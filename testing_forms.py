@@ -10,12 +10,13 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
-# NAME = "Vasya"
-# SURNAME = "Pupkin"
-# EMAIL = "vasya_pupkin@gmail.com"
-# LOGIN = ""
-# PASSWORD = ""
-# CONFIRM_PASSWORD = PASSWORD
+#  CONSTS for validation
+NAME = "Vasya"
+SURNAME = "Pupkin"
+EMAIL = "vasya_pupkin@gmail.com"
+LOGIN = ""
+PASSWORD = ""
+CONFIRM_PASSWORD = PASSWORD
 
 #  test cases for fields
 TC_1 = ''  #  Empty value
@@ -52,6 +53,26 @@ def auth_form_valid():
     try:
         driver.get("https://...")
 
+        name_field = driver.find_element_by_xpath('')  # input field 
+        name_field.send_keys(NAME)
+
+        surname_field = driver.find_element_by_xpath('')  # input field 
+        surname_field.send_keys(SURNAME)
+
+        email_field = driver.find_element_by_xpath('')  # input field 
+        email_field.send_keys(EMAIL)
+
+        password_field = driver.find_element_by_xpath('')  # input field 
+        password_field.send_keys(PASSWORD)
+
+        confirm_password_field = driver.find_element_by_xpath('')  # input field 
+        confirm_password_field.send_keys(CONFIRM_PASSWORD)
+
+        submit_button = driver.find_element_by_xpath('')  # submit button
+        submit_button.click()
+        
+    except NoSuchElementException:
+        print("Oooops , we have some problem !")
 
 def auth_form():
     try:
@@ -82,6 +103,7 @@ def auth_form():
 
 
 if __name__ == '__main__':
+    auth_form_valid()
     auth_form()
     
 
