@@ -5,7 +5,7 @@ from selenium import webdriver
 #PATH = "C:\Program Files\chromedriver.exe" 
 #driver = webdriver.Chrome(PATH) 
 
-PROXY = "12.345.678.910:8080"
+PROXY = "12.345.678.910:8080"  #  for HTTPS
 options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
@@ -17,6 +17,7 @@ EMAIL = "vasya_pupkin@gmail.com"  # it's a fake email
 LOGIN = "v_pupkin"
 PASSWORD = "12345qwerty"
 CONFIRM_PASSWORD = PASSWORD
+IP = PROXY[0, -5]
 
 #  test cases for fields
 TC_1 = ''  #  Empty value
@@ -41,7 +42,7 @@ TC_18 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
-         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111'
+         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111'  # max value
 
 cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
              TC_11, TC_12, TC_13, TC_14, TC_15, TC_16, TC_17, TC_18]         
@@ -51,26 +52,31 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
 
 def auth_form_valid():
     try:
-        driver.get("https://...")
+        driver.get("https://2ip.ru/")  # checking a proxy
+        prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
+         
+        if prox == IP:
+            driver.get("https://...")  
 
-        name_field = driver.find_element_by_xpath('')  # input field 
-        name_field.send_keys(NAME)
+            name_field = driver.find_element_by_xpath('')  # input field 
+            name_field.send_keys(NAME)
 
-        surname_field = driver.find_element_by_xpath('')  # input field 
-        surname_field.send_keys(SURNAME)
+            surname_field = driver.find_element_by_xpath('')  # input field 
+            surname_field.send_keys(SURNAME)
 
-        email_field = driver.find_element_by_xpath('')  # input field 
-        email_field.send_keys(EMAIL)
+            email_field = driver.find_element_by_xpath('')  # input field 
+            email_field.send_keys(EMAIL)
 
-        password_field = driver.find_element_by_xpath('')  # input field 
-        password_field.send_keys(PASSWORD)
+            password_field = driver.find_element_by_xpath('')  # input field 
+            password_field.send_keys(PASSWORD)
 
-        confirm_password_field = driver.find_element_by_xpath('')  # input field 
-        confirm_password_field.send_keys(CONFIRM_PASSWORD)
+            confirm_password_field = driver.find_element_by_xpath('')  # input field 
+            confirm_password_field.send_keys(CONFIRM_PASSWORD)
 
-        submit_button = driver.find_element_by_xpath('')  # submit button
-        submit_button.click()
-        
+            submit_button = driver.find_element_by_xpath('')  # submit button
+            submit_button.click()
+        else:
+            driver.quit()
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
