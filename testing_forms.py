@@ -82,25 +82,32 @@ def auth_form_valid():
 
 def auth_form():
     try:
-        driver.get("https://...")
+        driver.get("https://2ip.ru/")  # checking a proxy
+        prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
+         
+        if prox == IP:
+            driver.get("https://...")
 
-        name_field = driver.find_element_by_xpath('')  # input field 
-        name_field.send_keys("Abcdefgh")
+            name_field = driver.find_element_by_xpath('')  # input field 
+            name_field.send_keys("Abcdefgh")
 
-        surname_field = driver.find_element_by_xpath('')  # input field 
-        surname_field.send_keys("Abcdefgh")
+            surname_field = driver.find_element_by_xpath('')  # input field 
+            surname_field.send_keys("Abcdefgh")
 
-        email_field = driver.find_element_by_xpath('')  # input field 
-        email_field.send_keys("Abcdefgh")
+            email_field = driver.find_element_by_xpath('')  # input field 
+            email_field.send_keys("Abcdefgh")
 
-        password_field = driver.find_element_by_xpath('')  # input field 
-        password_field.send_keys("Abcdefgh")
+            password_field = driver.find_element_by_xpath('')  # input field 
+            password_field.send_keys("Abcdefgh")
 
-        confirm_password_field = driver.find_element_by_xpath('')  # input field 
-        confirm_password_field.send_keys("Abcdefgh")
+            confirm_password_field = driver.find_element_by_xpath('')  # input field 
+            confirm_password_field.send_keys("Abcdefgh")
 
-        submit_button = driver.find_element_by_xpath('')  # submit button
-        submit_button.click()
+            submit_button = driver.find_element_by_xpath('')  # submit button
+            submit_button.click()
+                  
+        else:
+            driver.quit()
         
     except NoSuchElementException:
         print("Oooops , we have some problem !")
