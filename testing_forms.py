@@ -57,22 +57,22 @@ def auth_form_valid():
          
         if prox == IP:
             driver.get("https://...")  
-
+            time.sleep(2)
             name_field = driver.find_element_by_xpath('')  # input field 
             name_field.send_keys(NAME)
-
+            time.sleep(1)
             surname_field = driver.find_element_by_xpath('')  # input field 
             surname_field.send_keys(SURNAME)
-
+            time.sleep(1)
             email_field = driver.find_element_by_xpath('')  # input field 
             email_field.send_keys(EMAIL)
-
+            time.sleep(1)
             password_field = driver.find_element_by_xpath('')  # input field 
             password_field.send_keys(PASSWORD)
-
+            time.sleep(1)
             confirm_password_field = driver.find_element_by_xpath('')  # input field 
             confirm_password_field.send_keys(CONFIRM_PASSWORD)
-
+            time.sleep(1)
             submit_button = driver.find_element_by_xpath('')  # submit button
             submit_button.click()
         else:
@@ -87,25 +87,24 @@ def auth_form():
          
         if prox == IP:
             driver.get("https://...")
-
+            time.sleep(2)
             name_field = driver.find_element_by_xpath('')  # input field 
             name_field.send_keys("Abcdefgh")
-
+            time.sleep(1)
             surname_field = driver.find_element_by_xpath('')  # input field 
             surname_field.send_keys("Abcdefgh")
-
+            time.sleep(1)
             email_field = driver.find_element_by_xpath('')  # input field 
             email_field.send_keys("Abcdefgh")
-
+            time.sleep(1)
             password_field = driver.find_element_by_xpath('')  # input field 
             password_field.send_keys("Abcdefgh")
-
+            time.sleep(1)
             confirm_password_field = driver.find_element_by_xpath('')  # input field 
             confirm_password_field.send_keys("Abcdefgh")
-
+            time.sleep(1)
             submit_button = driver.find_element_by_xpath('')  # submit button
-            submit_button.click()
-                  
+            submit_button.click()   
         else:
             driver.quit()
         
