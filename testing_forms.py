@@ -13,6 +13,15 @@ prox.proxy_type = ProxyType.MANUAL
 prox.http_proxy = “0.0.0.0:00000”
 prox.socks_proxy = “0.0.0.0:00000”
 prox.ssl_proxy = “0.0.0.0:00000”
+
+capabilities = webdriver.DesiredCapabilities.CHROME
+prox.add_to_capabilities(capabilities)
+
+# configure ChromeOptions
+driver = webdriver.Chrome(executable_path='/usr/local/share chromedriver',desired_capabilities=capabilities)
+
+# verify proxy ip
+driver.get("http://www.whatsmyip.org/")
 """
 
 PROXY = "12.345.678.910:8080"  #  for HTTP
