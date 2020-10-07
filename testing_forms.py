@@ -1,11 +1,13 @@
 from time import sleep
 from selenium import webdriver
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 
 
 #PATH = "C:\Program Files\chromedriver.exe" 
 #driver = webdriver.Chrome(PATH) 
 
-PROXY = "12.345.678.910:8080"  #  for HTTPS
+PROXY = "12.345.678.910:8080"  #  for HTTP
+PROXY_S = "12.345.678.910:443"  #  for HTTPS
 options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
