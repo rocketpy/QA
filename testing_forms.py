@@ -112,8 +112,9 @@ def auth_form():
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(item)
             time.sleep(1)
-            surname_field = driver.find_element_by_xpath('')  # input field 
-            surname_field.send_keys("Abcdefgh")
+            for item in cases_list: 
+                surname_field = driver.find_element_by_xpath('')  # input field 
+                surname_field.send_keys(item)
             time.sleep(1)
             email_field = driver.find_element_by_xpath('')  # input field 
             email_field.send_keys("Abcdefgh")
