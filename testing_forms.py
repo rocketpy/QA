@@ -108,8 +108,9 @@ def auth_form():
         if prox == IP:
             driver.get("https://...")
             time.sleep(2)
-            name_field = driver.find_element_by_xpath('')  # input field 
-            name_field.send_keys("Abcdefgh")
+            for item in cases_list: 
+                name_field = driver.find_element_by_xpath('')  # input field 
+                name_field.send_keys(item)
             time.sleep(1)
             surname_field = driver.find_element_by_xpath('')  # input field 
             surname_field.send_keys("Abcdefgh")
