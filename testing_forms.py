@@ -111,10 +111,14 @@ def auth_form():
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(item)
+                submit_button = driver.find_element_by_xpath('')  # submit button
+                submit_button.click() 
             time.sleep(1)
             for item in cases_list: 
                 surname_field = driver.find_element_by_xpath('')  # input field 
                 surname_field.send_keys(item)
+                submit_button = driver.find_element_by_xpath('')  # submit button
+                submit_button.click() 
             time.sleep(1)
             for item in cases_list: 
                 email_field = driver.find_element_by_xpath('')  # input field 
