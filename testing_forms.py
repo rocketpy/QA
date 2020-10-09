@@ -120,11 +120,13 @@ def auth_form():
                 email_field = driver.find_element_by_xpath('')  # input field 
                 email_field.send_keys("Abcdefgh")
             time.sleep(1)
-            password_field = driver.find_element_by_xpath('')  # input field 
-            password_field.send_keys("Abcdefgh")
+            for item in cases_list: 
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys("Abcdefgh")
             time.sleep(1)
-            confirm_password_field = driver.find_element_by_xpath('')  # input field 
-            confirm_password_field.send_keys("Abcdefgh")
+            for item in cases_list: 
+                confirm_password_field = driver.find_element_by_xpath('')  # input field 
+                confirm_password_field.send_keys("Abcdefgh")
             time.sleep(1)
             submit_button = driver.find_element_by_xpath('')  # submit button
             submit_button.click()   
