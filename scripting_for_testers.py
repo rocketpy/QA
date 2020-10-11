@@ -36,3 +36,17 @@ response.json()
 resp = response.json()
 for key in resp.keys():
     print(key)
+    
+    
+#  task , find duplicates of photo uls
+import requests
+
+url = 'http://jsonplaceholder.typicode.com/photos'
+response = requests.get(url)
+json_data = response.json()
+list_urls = []
+for photo in json_data:
+    list_urls.append(photo[url])
+
+uniq_urls = set(list_urls)  # here contain only uniq urls
+
