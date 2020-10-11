@@ -28,3 +28,11 @@ response.json()
 response = requests.get(url, auth=('test_name', 'password'))
 response.json()
 
+#  with user Token 
+response = requests.get(url, headers={'Autorization': 'Bearer here put user token'})
+response.json()
+
+#  get all keys in json
+resp = response.json()
+for key in resp.keys():
+    print(key)
