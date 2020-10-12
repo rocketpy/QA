@@ -123,6 +123,8 @@ def auth_form():
             for item in cases_list: 
                 email_field = driver.find_element_by_xpath('')  # input field 
                 email_field.send_keys("Abcdefgh")
+                submit_button = driver.find_element_by_xpath('')  # submit button
+                submit_button.click()                   
             time.sleep(1)
             for item in cases_list: 
                 password_field = driver.find_element_by_xpath('')  # input field 
@@ -140,7 +142,8 @@ def auth_form():
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
-#driver.quit()
+#  driver.back()
+#  driver.quit()
 
 
 if __name__ == '__main__':
