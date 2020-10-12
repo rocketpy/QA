@@ -133,9 +133,11 @@ def auth_form():
             for item in cases_list: 
                 confirm_password_field = driver.find_element_by_xpath('')  # input field 
                 confirm_password_field.send_keys("Abcdefgh")
+                submit_button = driver.find_element_by_xpath('')  # submit button
+                submit_button.click()         
             time.sleep(1)
-            submit_button = driver.find_element_by_xpath('')  # submit button
-            submit_button.click()   
+            # submit_button = driver.find_element_by_xpath('')  # submit button
+            # submit_button.click()   
         else:
             driver.quit()
         
