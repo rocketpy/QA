@@ -144,6 +144,27 @@ def auth_form():
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
+def auth_form_surname():
+    try:
+        driver.get("https://2ip.ru/")  # checking a proxy
+        prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
+         
+        if prox == IP:
+            driver.get("https://...")
+            time.sleep(2)
+            for item in cases_list: 
+                name_field = driver.find_element_by_xpath('')  # input field 
+                name_field.send_keys(NAME)
+                name_field = driver.find_element_by_xpath('')  # input field 
+                name_field.send_keys(item)
+                  
+                submit_button = driver.find_element_by_xpath('')  # submit button
+                submit_button.click() 
+            time.sleep(1)
+    except NoSuchElementException:
+        print("Oooops , we have some problem !")
+         
+         
 #  driver.back()
 #  driver.quit()
 
@@ -151,5 +172,6 @@ def auth_form():
 if __name__ == '__main__':
     auth_form_valid()  # first checking a valid data
     auth_form()
+    auth_form_surname()
     
 
