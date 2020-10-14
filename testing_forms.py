@@ -77,7 +77,7 @@ def auth_form_valid():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-         
+        time.sleep(5)
         if prox == IP:
             driver.get("https://...")  # website wich contain web_form
             time.sleep(2)
@@ -98,6 +98,7 @@ def auth_form_valid():
             time.sleep(1)
             submit_button = driver.find_element_by_xpath('')  # submit button
             submit_button.click()
+            time.sleep(2)
         else:
             driver.quit()
     except NoSuchElementException:
@@ -107,7 +108,7 @@ def auth_form_name():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-         
+        time.sleep(5)
         if prox == IP:
             driver.get("https://...")
             time.sleep(2)
@@ -151,7 +152,7 @@ def auth_form_surname():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-        time.sleep(2)
+        time.sleep(5)
         if prox == IP:
             driver.get("https://...")
             time.sleep(2)
@@ -170,7 +171,10 @@ def auth_form_surname():
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click() 
-                                  
+                time.sleep(2)  
+        else:
+            driver.quit()      
+                  
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
@@ -196,8 +200,10 @@ def auth_form_email():
                 password_field.send_keys(PASSWORD)
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
-                submit_button.click() 
-                                  
+                submit_button.click()
+        else:
+            driver.quit()
+         
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
