@@ -37,7 +37,10 @@ EMAIL = "vasya_pupkin@gmail.com"  # it's a fake email
 LOGIN = "v_pupkin"
 PASSWORD = "12345qwerty"
 CONFIRM_PASSWORD = PASSWORD
+
+#  need change slice for each proxy !!!!!
 IP = PROXY[0, -5]
+#  IP = PROXY_S[0, -5]
 
 #  test cases for fields
 TC_1 = ''  #  Empty value
