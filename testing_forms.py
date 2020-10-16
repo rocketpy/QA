@@ -236,7 +236,7 @@ def auth_form_password():
     except NoSuchElementException:
         print("Oooops , we have some problem !")
 
-def auth_form_password():
+def auth_form_confirm_password():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
@@ -255,8 +255,11 @@ def auth_form_password():
                 email_field.send_keys(EMAIL)  
                 time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
-                password_field.send_keys(item)
+                password_field.send_keys(PASSWORD)
                 time.sleep(1)  
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(item)
+                time.sleep(1)                   
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
         else:
