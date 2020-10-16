@@ -168,6 +168,9 @@ def auth_form_surname():
                 time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(PASSWORD)
+                time.sleep(1)
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(CONFIRM_PASSWORD)         
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click() 
@@ -198,6 +201,9 @@ def auth_form_email():
                 time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(PASSWORD)
+                time.sleep(1)
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(CONFIRM_PASSWORD)         
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
@@ -227,7 +233,10 @@ def auth_form_password():
                 time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(item)
-                time.sleep(1)  
+                time.sleep(1) 
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(CONFIRM_PASSWORD)
+                time.sleep(1)           
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
         else:
