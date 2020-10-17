@@ -113,33 +113,22 @@ def auth_form_name():
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(item)
-                submit_button = driver.find_element_by_xpath('')  # submit button
-                submit_button.click() 
-            time.sleep(1)
-            for item in cases_list: 
+                tiem.sleep(1)
                 surname_field = driver.find_element_by_xpath('')  # input field 
-                surname_field.send_keys(item)
+                surname_field.send_keys(SURNAME)
+                time.sleep(1)  
+                email_field = driver.find_element_by_xpath('')  # input field 
+                email_field.send_keys(EMAIL)  
+                time.sleep(1)  
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(PASSWORD)
+                time.sleep(1)
+                password_field = driver.find_element_by_xpath('')  # input field 
+                password_field.send_keys(CONFIRM_PASSWORD)         
+                time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click() 
-            time.sleep(1)
-            for item in cases_list: 
-                email_field = driver.find_element_by_xpath('')  # input field 
-                email_field.send_keys("Abcdefgh")
-                submit_button = driver.find_element_by_xpath('')  # submit button
-                submit_button.click()                   
-            time.sleep(1)
-            for item in cases_list: 
-                password_field = driver.find_element_by_xpath('')  # input field 
-                password_field.send_keys("Abcdefgh")
-            time.sleep(1)
-            for item in cases_list: 
-                confirm_password_field = driver.find_element_by_xpath('')  # input field 
-                confirm_password_field.send_keys("Abcdefgh")
-                submit_button = driver.find_element_by_xpath('')  # submit button
-                submit_button.click()         
-            time.sleep(1)
-            # submit_button = driver.find_element_by_xpath('')  # submit button
-            # submit_button.click()   
+                time.sleep(2)   
         else:
             driver.quit()
         
