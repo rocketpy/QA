@@ -78,7 +78,7 @@ def auth_form_valid():
         time.sleep(5)
         if prox == IP:
             driver.get("https://...")  # website wich contain web_form
-            time.sleep(2)
+            time.sleep(5)
             name_field = driver.find_element_by_xpath('')  # input field 
             name_field.send_keys(NAME)
             time.sleep(1)
@@ -109,7 +109,7 @@ def auth_form_name():
         time.sleep(5)
         if prox == IP:
             driver.get("https://...")
-            time.sleep(2)
+            time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(item)
@@ -128,7 +128,7 @@ def auth_form_name():
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click() 
-                time.sleep(2)   
+                time.sleep(5)   
         else:
             driver.quit()
         
@@ -142,7 +142,7 @@ def auth_form_surname():
         time.sleep(5)
         if prox == IP:
             driver.get("https://...")
-            time.sleep(2)
+            time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
@@ -161,7 +161,7 @@ def auth_form_surname():
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click() 
-                time.sleep(2)  
+                time.sleep(5)  
         else:
             driver.quit()      
                   
@@ -179,7 +179,7 @@ def auth_form_email():
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
-                tiem.sleep(1)
+                tiem.sleep(5)
                 surname_field = driver.find_element_by_xpath('')  # input field 
                 surname_field.send_keys(SURNAME)
                 time.sleep(1)  
@@ -194,6 +194,7 @@ def auth_form_email():
                 time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
+                time.sleep(5)
         else:
             driver.quit()
          
@@ -207,7 +208,7 @@ def auth_form_password():
          
         if prox == IP:
             driver.get("https://...")
-            time.sleep(2)
+            time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
@@ -226,6 +227,7 @@ def auth_form_password():
                 time.sleep(1)           
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
+                time.sleep(5)
         else:
             driver.quit()
          
@@ -239,7 +241,7 @@ def auth_form_confirm_password():
          
         if prox == IP:
             driver.get("https://...")
-            time.sleep(2)
+            time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
@@ -258,6 +260,7 @@ def auth_form_confirm_password():
                 time.sleep(1)                   
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
+                time.sleep(5)
         else:
             driver.quit()
          
