@@ -1,10 +1,19 @@
 from time import sleep
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 
 
 #PATH = "C:\Program Files\chromedriver.exe" 
 #driver = webdriver.Chrome(PATH) 
+
+options = Options()
+# options.add_argument('--headless')
+options.add_argument("start-maximized")
+options.add_argument('disable-infobars')  # disable infobar in Chrome browser
+# driver = webdriver.Chrome(chrome_options=options, executable_path=r'/Users/.../chromedriver')
 
 """
 prox = Proxy()
