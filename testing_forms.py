@@ -15,6 +15,12 @@ options.add_argument("start-maximized")
 options.add_argument('disable-infobars')  # disable infobar in Chrome browser
 # driver = webdriver.Chrome(chrome_options=options, executable_path=r'/Users/.../chromedriver')
 
+#  for Chrome
+opts = Options()
+user_agent = "any agent"
+opts.add_argument("user-agent=user_agent")
+driver = webdriver.Chrome(chrome_options=opts)
+
 """
 prox = Proxy()
 prox.proxy_type = ProxyType.MANUAL
@@ -81,7 +87,6 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
 
 # got to previous url use:  driver.back()
 # go to next url use:  driver.forward() 
-
 
 def auth_form_valid():
     try:
