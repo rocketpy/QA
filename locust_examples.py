@@ -27,6 +27,7 @@ from locust import HttpLocust, TaskSet
 from requests.auth import HTTPDigestAuth
 from credentials import *    
     
+    
 class UserBehavior(TaskSet):
 
     def on_start(self):
@@ -46,3 +47,5 @@ class WebsiteUser(HttpLocust):
     task_set = UserBehavior
     min_wait = 500
     max_wait = 900
+
+    
