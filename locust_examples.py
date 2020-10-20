@@ -4,6 +4,8 @@ from requests.auth import HTTPDigestAuth
 from credentials import *
 
 
+#  run locust -f locust.py --host=localhost:8089
+
 class UserBehavior(TaskSet):
     def on_start(self):
         if len(USER_CREDENTIALS) > 0:
@@ -18,3 +20,29 @@ class WebsiteUser(HttpLocust):
     task_set = UserBehavior
     min_wait = 5000
     max_wait = 9000
+
+    
+import requests
+from locust import HttpLocust, TaskSet
+from requests.auth import HTTPDigestAuth
+from credentials import *    
+    
+class UserBehavior(TaskSet):
+
+    def on_start(self):
+    """ on_start is called when a Locust start before
+        any task is scheduled
+    """
+    self.client.post("/resources/", json=RESOURCE_1, headers=headers_with_auth)
+
+    @task(1)
+    def profile(self):
+        self.client.get("/resources/", json={})
+
+class WebsiteUser(HttpLocust):
+    def setup(self):
+        client = clients.HttpSession(base_url=self.host)
+        client.post("/resources/", json=RESOURCE_1, headers=headers_with_auth)
+    task_set = UserBehavior
+    min_wait = 500
+    max_wait = 900
