@@ -6,8 +6,12 @@
 #  wait_time attribute - how long a simulated user will wait between executing tasks -
 #  - атрибут wait_time - как долго моделируемый пользователь будет ждать между выполнением задач
 
+from csvreader import CSVReader
 from locust import constant, TaskSet
 from locust.contrib.fasthttp import FastHttpLocust  #  for making an HTTP request
+
+
+reader = CSVReader("file_name.csv")  # or path to file
 
 
 class MyLocust(FastHttpLocust):
@@ -22,4 +26,5 @@ class MyTaskSet(TaskSet):
     @task
     def api_call(self):
         response = self.client.get(self.api_path)
+        
         
