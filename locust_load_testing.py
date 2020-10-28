@@ -6,6 +6,11 @@
 #  wait_time attribute - how long a simulated user will wait between executing tasks -
 #  - атрибут wait_time - как долго моделируемый пользователь будет ждать между выполнением задач
 
+# IMPORTANT: to start locust without the Web UI and generate the results in csv output:  env API_TOKEN=<apiKey> locust --master --csv=results --no-web -c 200 -r 50 --host
+# for this project use
+# env API_TOKEN=<apiKey> locust --master --csv=results --no-web -c 200 -r 50 --host http://api.openweathermap.org
+
+
 import os
 from locust import constant, TaskSet
 from locust.contrib.fasthttp import FastHttpLocust  #  for making an HTTP request
