@@ -10,6 +10,25 @@
 # for this project use
 # env API_TOKEN=<apiKey> locust --master --csv=results --no-web -c 200 -r 50 --host http://api.openweathermap.org
 
+#  VERY  IMPORTANT   !!!!!
+#  RUN the load test, recommended to run it in distributed mode. Locust in distributed mode has master and slaves.
+#  MASTER node doesn’t simulate any users and just manages the Web UI.
+#  IF our machine has 4 CPU cores, then we need to run one slave instance per processor core in the machine.
+
+#  First, start the master node by running below command in the same location you have your locustfile:
+#  env API_TOKEN=<apiKey> locust --master
+
+#  Second, start up a number of slaves based on the cores in your machine:
+#  locust --slave &
+#  locust --slave &
+#  locust --slave &
+#  locust --slave &
+
+#  You should have the Web UI running at http://localhost:8089/
+
+# IMPORTANT: to start locust without the Web UI and generate the results in csv output:  env API_TOKEN=<apiKey> locust --master --csv=results --no-web -c 200 -r 50 --host
+# for this project use
+# env API_TOKEN=<apiKey> locust --master --csv=results --no-web -c 200 -r 50 --host http://api.openweathermap.org
 
 import os
 from locust import TaskSet, task, constant
