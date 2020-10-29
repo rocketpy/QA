@@ -12,7 +12,7 @@
 
 
 import os
-from locust import constant, TaskSet
+from locust import TaskSet, task, constant
 from locust.contrib.fasthttp import FastHttpLocust  #  for making an HTTP request
 from csvreader import CSVReader
 
