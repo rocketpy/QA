@@ -26,9 +26,16 @@ class WebsiteUser(HttpLocust):
     max_wait = 9000
     
     
-#  or    
+#  OR
+
 from locust import HttpLocust, TaskSet
 
+
+"""
+To start the load test, run locust -f locust_files/my_locust_file.py --host=http://example.com 
+where host would be your IP. You can then go to 127.0.0.1:8089 to select the number of virtual users to simulate.
+On windows there's a limitation of 1024 users only.
+"""
 
 def login(self):
     params= {'name':'test','password':'test1','primary_email':'test667@gmail.com','primary_mobile_number':'9999999999','country_abbrev':'US'}
