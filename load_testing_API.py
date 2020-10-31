@@ -24,7 +24,36 @@ class WebsiteUser(HttpLocust):
     task_set = UserBehavior
     min_wait = 5000
     max_wait = 9000
+    
+    
+#  or    
+from locust import HttpLocust, TaskSet
 
+
+def login(self):
+    params= {'name':'test','password':'test1','primary_email':'test667@gmail.com','primary_mobile_number':'9999999999','country_abbrev':'US'}
+    self.client.post(URL, data=params)
+    # The data parameter or json can both be used here. If it's a dict then data would work but for json replace data with json.
+    # For more information you can check out requests package as Locust internally uses requests only.
+
+    
+class UserBehavior(TaskSet):
+    tasks = {index: 2, profile: 1}
+
+    def on_start(self):
+        login(self)
+
+    def on_stop(self):
+        pass
+
+    @task
+    def try(self):
+       pass
+
+class WebsiteUser(HttpLocust):
+    task_set = UserBehavior
+    min_wait = 5000
+    max_wait = 9000    
 
 """
 #  for uniques user use module Faker
@@ -32,7 +61,7 @@ class WebsiteUser(HttpLocust):
 def registration:
     URL = "ip"
     PARAMS = {'name':'test','password':'test1','primary_email':'test667@gmail.com','primary_mobile_number':'9999999999','country_abbrev':'US'} 
-    r = requests.post(url = URL,params = PARAMS,auth=HTTPDigestAuth('user', 'pass')) 
+    r = requests.post(url = URL,params = PARAMS, auth=HTTPDigestAuth('user', 'pass')) 
     response = r.text 
     print response
 """
