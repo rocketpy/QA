@@ -16,3 +16,7 @@ def test_sum_two_integers():
     numbers_field = driver.find_element_by_xpath('//TypeStaticText')
     assert int(numbers_field.text) == 5
     driver.quit()
+
+    
+#  py.test -v filename.py  # to run test
+    
