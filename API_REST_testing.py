@@ -2,6 +2,17 @@
 #  pip install -U requests Flask pytest pytest-html
 
 
+import requests
+import json
+
+
+def test_post_headers_body_json():
+    url = 'https://httpbin.org/post'
+    headers = {'Content-Type': 'application/json'} 
+    payload = {'key1': 1, 'key2': 'value2'}
+    # need convert dict to json string by json.dumps() for body data. 
+    resp = requests.post(url, headers=headers, data=json.dumps(payload, indent=4))    
+
 
 #  some example from Postman (create a Postman API request test and take code )
 """
