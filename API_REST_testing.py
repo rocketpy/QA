@@ -1,11 +1,13 @@
 #  install requirements
 #  pip install -U requests Flask pytest pytest-html
 
+#  To get more details and generate a html report:  pytest -sv --html report.html
 
+
+# to run this test with pytest use: pytest test_file_name.py
 import json
 import requests
 
-# for run this test with pytest use: pytest  
 
 def test_post_headers_body_to_json():
     url = 'https://httpbin.org/post'
