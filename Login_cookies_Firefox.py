@@ -12,15 +12,15 @@ LOGIN = ""
 PASSWORD = ""
 
 try:
-    # driver.get("https://instagram.com/")
+    # driver.get("https://www...")
     # time.sleep(5)
     #
-    # username_input = driver.find_element_by_name("username")
+    # username_input = driver.find_element_by_name("LOGIN")
     # username_input.clear()
     # username_input.send_keys(instagram_login)
     # time.sleep(5)
     #
-    # password_input = driver.find_element_by_name("password")
+    # password_input = driver.find_element_by_name("PASSWORD")
     # password_input.clear()
     # password_input.send_keys(instagram_password)
     # time.sleep(5)
@@ -29,7 +29,7 @@ try:
     # time.sleep(10)
     #
     # # # cookies
-    # pickle.dump(driver.get_cookies(), open(f"{instagram_login}_cookies", "wb"))
+    # pickle.dump(driver.get_cookies(), open(f"{LOGIN}_cookies", "wb"))
 
-    driver.get("https://instagram.com/")
+    driver.get("https://www...")
     time.sleep(5)
