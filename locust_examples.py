@@ -18,8 +18,7 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
-    min_wait = 5000
-    max_wait = 9000
+    wait_time = between(5, 9)  # between 5 and 9 seconds
 
     
 import requests
@@ -45,7 +44,6 @@ class WebsiteUser(HttpLocust):
         client = clients.HttpSession(base_url=self.host)
         client.post("/resources/", json=RESOURCE_1, headers=headers_with_auth)
     task_set = UserBehavior
-    min_wait = 500
-    max_wait = 900
+    wait_time = between(5, 9)  # between 5 and 9 seconds
 
     
