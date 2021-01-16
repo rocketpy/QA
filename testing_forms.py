@@ -85,7 +85,7 @@ TC_4 = 'abcdefgh'  # lowercase alphabet
 TC_5 = 'abcde   fgh'  #  Space in the middle
 TC_6 = 'abcdefgh   '  #  Space values at the end
 TC_7 = '<span class="text-gray">No suggested jump to results</span>'  #  Using HTML tag's
-TC_8 = '«♣☺♂» , «»‘~!@#$%^&*()?>,./\<][ /*!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
+TC_8 = '«♣☺♂«»‘~!@#$%^&*()?>,./\<][ /*!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
 TC_9 = 'ABCDEFGH'  # uppercase alphabet
 TC_10 = 'vasya_pupkin@@@gmail.com'  #  triple @@@
 TC_11 = 'a'  # min alphabet value
@@ -102,9 +102,10 @@ TC_21 = '<script>alert(«Hello, world!»)</script>'
 TC_22 = '<script>document.getElementByID(«…»).disabled=true</script>'
 TC_23 = 'abcdeABCDE'  # upper and lower cases
 TC_24 = '%%%%%%'
-TC_25 = '<userlogin>'  # need use valid user with angle brackets
+TC_25 = '<'+f'{LOGIN}'+'>'  # need use valid user with angle brackets
 TC_26 = 'логинпароль'  # kirilica alphabet
-TC_27 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+TC_27 = ''  # checking ban for IP, for example 5 times possible to try login with wrong a password 
+TC_28 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
