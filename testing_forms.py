@@ -75,7 +75,13 @@ TC_14 = 'भारतभारतभारतभारत网络网络网络网�
 TC_15 = '<script>document.body.style.backgroundColor = "#000";</script>'
 TC_16 = '$detail_id=$_GET['detail'];'
 TC_17 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'  #  Basic XSS, Basic Sql injection, Average value
-TC_18 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+TC_18 = '<script>alert(123)</script>'
+TC_19 = 'DROP TABLE user;'
+TC_20 = 'SELECT * FROM blog WHERE code LIKE ‘a%’;'
+TC_21 = '<script>alert(«Hello, world!»)</script>'
+TC_22 = '<script>document.getElementByID(«…»).disabled=true</script>'
+
+TC_ = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
