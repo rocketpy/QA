@@ -59,13 +59,13 @@ IP = PROXY[0, -5]
 
 #  test cases for fields
 TC_1 = ''  #  Empty value
-TC_2 = '   12345abcABC'  #  Space values at the beginning
+TC_2 = '   abcde'  #  Space values at the beginning
 TC_3 = '1234567890'  # numerics
 TC_4 = 'abcdefgh'  # lowercase alphabet
 TC_5 = 'abcde   fgh'  #  Space in the middle
 TC_6 = 'abcdefgh   '  #  Space values at the end
 TC_7 = '<span class="text-gray">No suggested jump to results</span>'  #  Using HTML tag's
-TC_8 = '!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
+TC_8 = '«♣☺♂» , «»‘~!@#$%^&*()?>,./\<][ /*!@#$%^&*()_+{}{}{}{:":"?><>PaSSword!@#$%^&*()-_+=`~/\,.?><|'  #  Special symbols
 TC_9 = 'ABCDEFGH'  # uppercase alphabet
 TC_10 = 'vasya_pupkin@@@gmail.com'  #  triple @@@
 TC_11 = 'a'  # min alphabet value
@@ -73,15 +73,18 @@ TC_12 = '1'  # min numeric value
 TC_13 = '               '  #  Space
 TC_14 = 'भारतभारतभारतभारत网络网络网络网络'  #  Non ASCII
 TC_15 = '<script>document.body.style.backgroundColor = "#000";</script>'
-TC_16 = '$detail_id=$_GET['detail'];'
-TC_17 = 'http://www.site.com/page.php?var=<script>alert('xss');</script>'  #  Basic XSS, Basic Sql injection, Average value
+TC_16 = '$detail_id=$_GET["detail"];'
+TC_17 = 'http://www.site.com/page.php?var=<script>alert("xss");</script>'  #  Basic XSS, Basic Sql injection, Average value
 TC_18 = '<script>alert(123)</script>'
-TC_19 = 'DROP TABLE user;'
+TC_19 = 'DROP TABLE users;'  # for username or login fields !
 TC_20 = 'SELECT * FROM blog WHERE code LIKE ‘a%’;'
 TC_21 = '<script>alert(«Hello, world!»)</script>'
 TC_22 = '<script>document.getElementByID(«…»).disabled=true</script>'
-
-TC_ = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
+TC_23 = 'abcdeABCDE'  # upper and lower cases
+TC_24 = '%%%%%%'
+TC_25 = '<userlogin>'  # need use valid user with angle brackets
+TC_26 = 'логинпароль'  # kirilica alphabet
+TC_27 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
@@ -89,7 +92,8 @@ TC_ = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111
          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111'  # max value
 
 cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
-             TC_11, TC_12, TC_13, TC_14, TC_15, TC_16, TC_17, TC_18]         
+             TC_11, TC_12, TC_13, TC_14, TC_15, TC_16, TC_17, TC_18, TC_19,
+             TC_20, TC_21, TC_22, TC_23, TC_24, TC_25, TC_26, TC_27]         
 
 # got to previous url use:  driver.back()
 # go to next url use:  driver.forward() 
