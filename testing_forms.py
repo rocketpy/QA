@@ -9,6 +9,26 @@ from selenium.webdriver.common.proxy import Proxy, ProxyType
 #PATH = "C:\Program Files\chromedriver.exe" 
 #driver = webdriver.Chrome(PATH) 
 
+"""
+options = webdriver.ChromeOptions()
+options.add_argument("user-agent=...")
+
+#  webdriver mode OFF
+
+#  for ChromeDriver under version 79.0.3945.16
+# options.add_experimental_option("excludeSwitches", ["enable-automation"])
+# options.add_experimental_option("useAutomationExtension", False)
+
+# for ChromeDriver version 79.0.3945.16 or higher
+options.add_argument("--disable-blink-features=AutomationControlled")
+
+driver = webdriver.Chrome(executable_path="...",
+                          options=options
+                         )
+                         
+driver.get("https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html")  # checking , working or not a mode_off !
+"""
+
 options = Options()
 # options.add_argument('--headless')
 options.add_argument("start-maximized")
