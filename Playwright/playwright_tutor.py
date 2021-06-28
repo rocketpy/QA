@@ -18,4 +18,26 @@ with sync_playwright() as p:
         page.screenshot(path=f'example-{browser_type.name}.png')
         browser.close()
 
+        
+# Async API
+
+# If your app is based on the modern asyncio loop and you are used to async/await constructs,
+# Playwright exposes Async API for you. You should use this API inside a Python REPL supporting asyncio like with python -m asyncio
+
+# python -m asyncio
+"""
+import asyncio
+from playwright.async_api import async_playwright
+
+async def main():
+    async with async_playwright() as p:
+        for browser_type in [p.chromium, p.firefox, p.webkit]:
+            browser = await browser_type.launch()
+            page = await browser.new_page()
+            await page.goto('http://whatsmyuseragent.org/')
+            await page.screenshot(path=f'example-{browser_type.name}.png')
+            await browser.close()
+
+asyncio.run(main())
+"""
 
