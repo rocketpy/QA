@@ -41,3 +41,14 @@ async def main():
 asyncio.run(main())
 """
 
+# With pytest
+
+# Use our pytest plugin for Playwright.
+
+def test_playwright_is_visible_on_google(page):
+    page.goto("https://www.google.com")
+    page.type("input[name=q]", "Playwright GitHub")
+    page.click("input[type=submit]")
+    page.wait_for_selector("text=microsoft/Playwright")
+
+
