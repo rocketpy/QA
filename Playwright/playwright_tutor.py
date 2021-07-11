@@ -72,4 +72,39 @@ browser.close()
 playwright.stop()
 
 
+# Async REPL such as Jupyter Notebook:
 
+from playwright.async_api import async_playwright
+
+
+playwright = await async_playwright().start()
+browser = await playwright.chromium.launch()
+page = await browser.new_page()
+await page.goto("http://whatsmyuseragent.org/")
+await page.screenshot(path="example.png")
+await browser.close()
+await playwright.stop()
+
+
+#  Examples:
+
+# Mobile and geolocation
+# This snippet emulates Mobile Safari on a device at a given geolocation, navigates to maps.google.com, performs action and takes a screenshot.
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    iphone_11 = p.devices["iPhone 11 Pro"]
+    browser = p.webkit.launch(headless=False)
+    context = browser.new_context(
+        **iphone_11,
+        locale="en-US",
+        geolocation={"longitude": 12.492507, "latitude": 41.889938 },
+        permissions=["geolocation"]
+    )
+    page = context.new_page()
+    page.goto("https://maps.google.com")
+    page.click("text=Your location")
+    page.screenshot(path="colosseum-iphone.png")
+    browser.close()
+
+    
