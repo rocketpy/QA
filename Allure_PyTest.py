@@ -9,23 +9,17 @@ from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
 
-@allure.feature('Функциональное тестирование')
-@allure.story('Ввод суммы для конвертации, получение результата, проверка того, что использовалась    введенная нами сумма')
+@allure.feature('Functional testing')
+@allure.story('Checking that the amount we entered has been used')
 class TestCalculatorMoneyCurrency:
-    @allure.step('Запуск браузера Chrome, открытие и загрузка страницы с кальулятором.')
+    @allure.step('Launch the Chrome browser, open and load the calculator page.')
     def setup_method(self, method):
-
-        """
-        Открытие браузера Chrome v. 55.0.2883.87 m (64-bit)
-        Загрузка калькулятора иностранных валют
-        Проверка работоспособности поля ввода суммы и кнопки "Показать" для получения резульатата
-        """
-
         driver.maximize_window()
         driver.get('http://www.sberbank.ru/ru/quotes/converter')
         assert 'Калькулятор иностранных валют' in driver.title
         driver.implicitly_wait(15)
 
+        
     @allure.step('Возврат в исходное состояние, закрытие браузера.')
     def teardown_method(self, method):
 
