@@ -1,3 +1,10 @@
+# Main steps:
+# Allure Commandline:  https://docs.qameta.io/allure/
+# Download the latest version as zip archive from https://github.com/allure-framework/allure-core/releases/latest
+# Unpack the archive to allure-commandline directory.
+# Navigate to bin directory.
+# Use allure.bat for Windows and allure for other Unix platforms.
+
 #  Install allure-adaptor for pytest
 # pip install pytest-allure-adaptor
 
