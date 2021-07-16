@@ -1,3 +1,11 @@
+#  Install allure-adaptor for pytest
+# pip install pytest-allure-adaptor
+
+# Usage
+# py.test --alluredir [path_to_report_dir]
+# allure generate directory-with-results/
+
+
 import time
 import pytest
 import allure
