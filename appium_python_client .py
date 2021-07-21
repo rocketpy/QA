@@ -49,3 +49,9 @@ desired_caps = dict(platformName = 'iOS'
                     )
 
 self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps, direct_connection=True)
+
+
+# find element in appium using text
+# driver.find_elements_by_xpath("//*[contains(text(), 'Submit')]")
+
+
