@@ -54,4 +54,9 @@ self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps, dir
 # find element in appium using text
 # driver.find_elements_by_xpath("//*[contains(text(), 'Submit')]")
 
+#  find the location of elements
+# self.driver.find_element_by_xpath("//android.widget.EditText[@index='0']").send_keys("XXXXX")
+# or
+# self.driver.find_element_by_xpath("//android.widget.EditText[@index='1']").send_keys("XXXXX")
+
 
