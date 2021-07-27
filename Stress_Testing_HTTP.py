@@ -15,7 +15,9 @@ from twisted.internet import reactor
 reactor.run() 
 # 200
 
+
 # Example of Stress test script
+# Taked from https://www.mailgun.com/blog/stress-testing-http-with-twisted-python-and-treq/
 import random  
 from datetime import datetime
 from twisted.internet import epollreactor  
@@ -51,12 +53,29 @@ def counter():
 
 def request():
     deferred = treq.post('http://api.host/v2/loadtest/messages',
-         auth=('api', 'api-key'),
-         data={'from': 'Loadtest <test@example.com>',
+               auth=('api', 'api-key'),
+               data={'from': 'Loadtest <test@example.com>',
                'to': 'to@example.org',
                'subject': "test"},
-         pool=pool)
+               pool=pool)
     deferred.addCallback(request_done)
     return deferred
 
 
+def requests_generator():
+    global req_generated
+    while True:
+        deferred = request()
+        req_generated += 1
+        # do not yield deferred here so cooperator won't pause until
+        # response is received
+        yield None
+        
+if __name__ == '__main__':  
+# make cooperator work on spawning requests
+cooperator.cooperate(requests_generator())
+# run the counter that will be reporting sending speed once a second
+reactor.callLater(1, counter)
+# run the reactor
+reactor.run()
+    
