@@ -48,3 +48,15 @@ def counter():
     deferred.addErrback(lambda x: None)  # ignore errors
     return deferred
 
+
+def request():
+    deferred = treq.post('http://api.host/v2/loadtest/messages',
+         auth=('api', 'api-key'),
+         data={'from': 'Loadtest <test@example.com>',
+               'to': 'to@example.org',
+               'subject': "test"},
+         pool=pool)
+    deferred.addCallback(request_done)
+    return deferred
+
+
