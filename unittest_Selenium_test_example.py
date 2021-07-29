@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
+# Example for registration form
+
 
 class Register(unittest.TestCase):
     def setUp(self):
@@ -25,4 +27,16 @@ def test_search_in_python_org(self):
     # time.sleep(5)
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('Some text')
+    
+    # date 
+    select = Select(driver.find_element_by_id('...'))
+    select.select_by_visible_text('...')
+    
+    # a day
+    select = Select(driver.find_element_by_id('...'))
+    select.select_by_visible_text('...')
+    
+    # a year
+    select = Select(driver.find_element_by_id('...'))
+    select.select_by_visible_text('...')
 
