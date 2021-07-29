@@ -1,5 +1,5 @@
-import time
 import unittest
+# from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
@@ -13,17 +13,20 @@ class Register(unittest.TestCase):
         self.driver.maximize_window()
 
 
-def test_search_in_python_org(self):
+def test_main(self):
     driver.implicitly_wait(20)
     driver = self.driver
     driver.get("http://www...")
     driver.find_element_by_link_text("Registration").click()
+    
     elem = driver.find_element_by_id("...")
     elem.send_keys("Some text")
     elem = driver.find_element_by_id("...")
     elem.send_keys("Some text")
+    
     elem = driver.find_element_by_css_selector("...").click()
     elem = driver.find_element_by_xpath("...").click()
+    
     # time.sleep(5)
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('Some text')
@@ -59,3 +62,10 @@ def test_search_in_python_org(self):
     elem = driver.find_element_by_xpath("...").click()
 
 
+    def tearDown(self):
+         self.driver.close()
+
+
+if __name__ == "__main__":
+    unittest.test_main()
+    
