@@ -10,3 +10,19 @@ class Register(unittest.TestCase):
         self.driver = webdriver.Chrome(executable_path="/chromedriver")
         self.driver.maximize_window()
 
+
+def test_search_in_python_org(self):
+    driver.implicitly_wait(20)
+    driver = self.driver
+    driver.get("http://www...")
+    driver.find_element_by_link_text("Registration").click()
+    elem = driver.find_element_by_id("...")
+    elem.send_keys("Some text")
+    elem = driver.find_element_by_id("...")
+    elem.send_keys("Some text")
+    elem = driver.find_element_by_css_selector("...").click()
+    elem = driver.find_element_by_xpath("...").click()
+    # time.sleep(5)
+    select = Select(driver.find_element_by_id('...'))
+    select.select_by_visible_text('Some text')
+
