@@ -1,1 +1,20 @@
+ # The Top 15 best practices for creating a UI test automation framework:
+ 
+  -  Do not rely ONLY on UI test automation
+  -  Consider using a BDD framework
+  -  Always always ALWAYS use test design patterns and principles
+  -  NEVER use Thread.sleep() unless there are specific test requirements
+  -  Do not run ALL tests across ALL target browsers
+  -  Separate your tests from your test automation framework
+  -  Make your test automation framework portable
+  -  Name your tests wisely
+  -  Use soft assertions if you need to make a list of related checks on the same web page
+  -  Take screenshots for failure investigation
+  -  Make tests simpler instead of adding comments
+  -  Follow the “green tests run” policy
+  -  Use data-driven instead of repeated tests
+  -  All tests should be independent
+  -  Setup detailed automation tests reporting
 
+# More info:
+# https://www.blazemeter.com/blog/top-15-ui-test-automation-best-practices-you-should-follow
