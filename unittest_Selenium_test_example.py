@@ -6,6 +6,8 @@ from selenium.webdriver.support.select import Select
 
 # Example for registration form
 
+# Important !!!  Here needed to add asserts !!!
+
 
 class Register(unittest.TestCase):
     def setUp(self):
