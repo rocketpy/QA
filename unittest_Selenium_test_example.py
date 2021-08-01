@@ -27,11 +27,14 @@ def test_main(self):
     
     elem = driver.find_element_by_id("...")
     elem.send_keys("Some text")
-    elem = driver.find_element_by_id("...")
-    elem.send_keys("Some text")
+    assert elem, "No such element found."
+    
+    elem_2 = driver.find_element_by_id("...")
+    elem_2.send_keys("Some text")
+    assert elem_2, "No such element found."
     
     elem = driver.find_element_by_css_selector("...").click()
-    elem = driver.find_element_by_xpath("...").click()
+    elem_2 = driver.find_element_by_xpath("...").click()
     
     # time.sleep(5)
     select = Select(driver.find_element_by_id('...'))
@@ -73,5 +76,5 @@ def test_main(self):
 
 
 if __name__ == "__main__":
-    unittest.test_main()
+    unittest.main()
     
