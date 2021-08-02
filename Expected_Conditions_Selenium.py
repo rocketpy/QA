@@ -34,3 +34,11 @@ try:
 finally:
     driver.quit()
     
+
+# or 
+from selenium.webdriver.support import expected_conditions as EC
+
+
+wait = WebDriverWait(driver, 10)
+element = wait.until(EC.element_to_be_clickable((By.ID, 'someid')))
+ 
