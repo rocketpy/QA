@@ -21,9 +21,9 @@ def setUp(self):
         
 def test_main(self):
     driver.implicitly_wait(20)
-    # driver = self.driver
-    # driver.get("http://www...")
-    driver.find_element_by_link_text("Registration").click()
+    buttn_reg = driver.find_element_by_link_text("Registration")
+    buttn_reg.click()
+    self.assertTrue(buttn_reg), "No such button found."
     
     elem = driver.find_element_by_id("...")
     elem.send_keys("Some text")
@@ -39,28 +39,36 @@ def test_main(self):
     # time.sleep(5)
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('Some text')
+    self.assertTrue(select), "No such element found."
     
     # date 
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('...')
+    # self.assertTrue(), "No such element found."
     
     # a day
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('...')
+    # self.assertTrue(), "No such element found."
     
     # a year
     select = Select(driver.find_element_by_id('...'))
     select.select_by_visible_text('...')
+    # self.assertTrue(), "No such element found."
     
     # email and phone number
     elem = driver.find_element_by_id("...")
     elem.send_keys("...")
+    # self.assertTrue(), "No such element found."
+    
     elem = driver.find_element_by_id("...")
     elem.send_keys("...")
+    # self.assertTrue(), "No such element found."
     
     # img of profile
     elem = driver.find_element_by_id("...")
     elem.send_keys("file name or path to file")
+    # self.assertTrue(), "No such element found."
     
     # input passwords
     elem = driver.find_element_by_id("")
