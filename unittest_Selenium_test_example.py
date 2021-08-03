@@ -27,11 +27,11 @@ def test_main(self):
     
     elem = driver.find_element_by_id("...")
     elem.send_keys("Some text")
-    assert elem, "No such element found."
+    self.assertTrue(elem), "No such element found."
     
     elem_2 = driver.find_element_by_id("...")
     elem_2.send_keys("Some text")
-    assert elem_2, "No such element found."
+    self.assertTrue(elem_2), "No such element found."
     
     elem = driver.find_element_by_css_selector("...").click()
     elem_2 = driver.find_element_by_xpath("...").click()
