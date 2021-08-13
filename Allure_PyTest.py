@@ -5,6 +5,8 @@
 # Navigate to bin directory.
 # Use allure.bat for Windows and allure for other Unix platforms.
 
+# Allure-Python:  https://github.com/allure-framework/allure-python
+
 #  Install allure-adaptor for pytest
 # pip install pytest-allure-adaptor
 
