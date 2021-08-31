@@ -156,7 +156,7 @@ def auth_form_name():
         driver.get("https://2ip.ru/")  # checking a proxy
         driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-        time.sleep(5)
+        # time.sleep(5)
         if prox == IP:
             driver.get("https://...")
             # time.sleep(5)
@@ -222,30 +222,30 @@ def auth_form_surname():
 def auth_form_email():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
+        driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-         
         if prox == IP:
             driver.get("https://...")
-            time.sleep(2)
+            # time.sleep(2)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
-                tiem.sleep(5)
+                # tiem.sleep(5)
                 surname_field = driver.find_element_by_xpath('')  # input field 
                 surname_field.send_keys(SURNAME)
-                time.sleep(1)  
+                # time.sleep(1)  
                 email_field = driver.find_element_by_xpath('')  # input field 
                 email_field.send_keys(item)  
-                time.sleep(1)  
+                # time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(PASSWORD)
-                time.sleep(1)
+                # time.sleep(1)
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(CONFIRM_PASSWORD)         
-                time.sleep(1)  
+                # time.sleep(1)  
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
-                time.sleep(5)
+                # time.sleep(5)
         else:
             driver.quit()
          
@@ -255,30 +255,30 @@ def auth_form_email():
 def auth_form_password():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
+        driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-         
         if prox == IP:
             driver.get("https://...")
             time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
-                tiem.sleep(1)
+                # tiem.sleep(1)
                 surname_field = driver.find_element_by_xpath('')  # input field 
                 surname_field.send_keys(SURNAME)
-                time.sleep(1)  
+                # time.sleep(1)  
                 email_field = driver.find_element_by_xpath('')  # input field 
                 email_field.send_keys(EMAIL)  
-                time.sleep(1)  
+                # time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(item)
-                time.sleep(1) 
+                # time.sleep(1) 
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(CONFIRM_PASSWORD)
-                time.sleep(1)           
+                # time.sleep(1)           
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
-                time.sleep(5)
+                # time.sleep(5)
         else:
             driver.quit()
          
@@ -288,41 +288,41 @@ def auth_form_password():
 def auth_form_confirm_password():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
+        driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-         
         if prox == IP:
             driver.get("https://...")
-            time.sleep(5)
+            # time.sleep(5)
             for item in cases_list: 
                 name_field = driver.find_element_by_xpath('')  # input field 
                 name_field.send_keys(NAME)
-                tiem.sleep(1)
+                # time.sleep(1)
                 surname_field = driver.find_element_by_xpath('')  # input field 
                 surname_field.send_keys(SURNAME)
-                time.sleep(1)  
+                # time.sleep(1)  
                 email_field = driver.find_element_by_xpath('')  # input field 
                 email_field.send_keys(EMAIL)  
-                time.sleep(1)  
+                # time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(PASSWORD)
-                time.sleep(1)  
+                # time.sleep(1)  
                 password_field = driver.find_element_by_xpath('')  # input field 
                 password_field.send_keys(item)
-                time.sleep(1)                   
+                # time.sleep(1)                   
                 submit_button = driver.find_element_by_xpath('')  # submit button
                 submit_button.click()
-                time.sleep(5)
+                # time.sleep(5)
         else:
             driver.quit()
          
     except NoSuchElementException:
-        print("Oooops , we have some problem !")
+        print("Oooops, we have some problem !")
 
 #  driver.back()
 #  driver.quit()
 
 if __name__ == '__main__':
-    auth_form_valid()  # first checking a valid data
+    auth_form_valid()  # first checking with a valid data
     auth_form_name()
     auth_form_surname()
     auth_form_email()
