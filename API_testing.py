@@ -19,8 +19,14 @@ def test_check_header():
      
 # Checking the value of a response body element
 def test_check_body_element():
-     response = requests.get("http://api...")
-     response_body = response.json()
-     assert response_body["country"] == "Ukraine"
+    response = requests.get("http://api...")
+    response_body = response.json()
+    assert response_body["country"] == "Ukraine"
 
+     
+# Extract and assert on the value of the place name
+def test_():
+    response = requests.get("http://api...")
+    response_body = response.json()
+    assert response_body["places"][0]["place name"] == "Braiton"
      
