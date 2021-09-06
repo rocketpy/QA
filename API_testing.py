@@ -36,12 +36,19 @@ def test_len_elems():
     response = requests.get("http://api...")
     response_body = response.json()
     assert len(response_body["places"]) == 1
-  
+    
 
-# The test methods with arguments
-@pytest.mark.parametrize("country_code, zip_code, expected_place_name", test_data_zip_codes)
-def test_using_test_data_object_get_location_data_check_place_name(country_code, zip_code, expected_place_name):
+# some example of data
+"""
+test_data = [("uk", "5373", "Some place"),
+             ("cd", "m35", "Some place"),
+             ("dn", "23571", "Some place")
+             ]
+"""
+# The test methods with arguments, it runs the same test three times !
+@pytest.mark.parametrize("country_code, zip_code, place_name", test_data)
+def test_using_test_data(country_code, zip_code, place_name):
     response = requests.get(f"http://api../{country_code}/{zip_code}")
     response_body = response.json()
-    assert response_body["places"][0]["place name"] == expected_place_name
+    assert response_body["places"][0]["place name"] == place_name
     
