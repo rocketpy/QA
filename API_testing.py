@@ -51,4 +51,18 @@ def test_using_test_data(country_code, zip_code, place_name):
     response = requests.get(f"http://api../{country_code}/{zip_code}")
     response_body = response.json()
     assert response_body["places"][0]["place name"] == place_name
-    
+
+
+# some example with data from csv file
+import csv
+
+
+def read_data_from_csv():
+    test_data = []
+    with open("file_name.csv", newline="") as file:
+        data = csv.reader(file, delimiter=",")
+        next(data)  # to skip header row
+        for r in data:
+            test_data.append(r)
+    return test_data
+
