@@ -66,3 +66,10 @@ def read_data_from_csv():
             test_data.append(r)
     return test_data
 
+
+@pytest.mark.parametrize("country_code, zip_code, place_name", read_data_from_csv())
+def test_using_csv_data(country_code, zip_code, expected_place_name):
+    response = requests.get(f"http://api.../{country_code}/{zip_code}")
+    response_body = response.json()
+    assert response_body["places"][0]["place name"] == place_name
+    
