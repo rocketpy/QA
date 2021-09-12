@@ -50,3 +50,9 @@ class WikipediaHome(Page):
             tagline=Text('xpath', '//*[@class="other-project-tagline"]')
         )
 
+
+# Using a Page Object in a test can be done like so:
+def test_search_wikipedia():
+    home = WikipediaHome()
+    home.search_form.perform('kittens')
+
