@@ -38,5 +38,15 @@ class WikipediaHome(Page):
             tagline=Text('xpath', '//*[@class="other-project-tagline"]')
         )
 
+        self.commons = Area(
+            root=Root('xpath', '//*[@class="other-project"][1]'),
+            title=Link('xpath', '//*[@class="other-project-title"]'),
+            tagline=Text('xpath', '//*[@class="other-project-tagline"]')
+        )
 
+        self.wikivoyage = Area(
+            root=Root('xpath', '//*[@class="other-project"][2]'),
+            title=Link('xpath', '//*[@class="other-project-title"]'),
+            tagline=Text('xpath', '//*[@class="other-project-tagline"]')
+        )
 
