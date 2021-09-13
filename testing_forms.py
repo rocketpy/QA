@@ -1,9 +1,9 @@
-from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.proxy import Proxy, ProxyType
+# from time import sleep
 
 
 #PATH = "C:\Program Files\chromedriver.exe" 
@@ -317,6 +317,11 @@ def auth_form_confirm_password():
          
     except NoSuchElementException:
         print("Oooops, we have some problem !")
+        
+
+def click_on_captcha():
+    driver.find_element_by_xpath('').click()
+
 
 #  driver.back()
 #  driver.quit()
