@@ -119,37 +119,26 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
 # got to previous url use:  driver.back()
 # go to next url use:  driver.forward() 
 
+
 def auth_form_valid():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
         driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-        # time.sleep(5)
         if prox == IP:
             driver.get("https://...")  # website wich contain web_form
-            # time.sleep(5)
-            name_field = driver.find_element_by_xpath('')  # input field 
-            name_field.send_keys(NAME)
-            # time.sleep(1)
-            surname_field = driver.find_element_by_xpath('')  # input field 
-            surname_field.send_keys(SURNAME)
-            # time.sleep(1)
-            email_field = driver.find_element_by_xpath('')  # input field 
-            email_field.send_keys(EMAIL)
-            # time.sleep(1)
-            password_field = driver.find_element_by_xpath('')  # input field 
-            password_field.send_keys(PASSWORD)
-            # time.sleep(1)
-            confirm_password_field = driver.find_element_by_xpath('')  # input field 
-            confirm_password_field.send_keys(CONFIRM_PASSWORD)
-            # time.sleep(1)
-            submit_button = driver.find_element_by_xpath('')  # submit button
-            submit_button.click()
-            # time.sleep(2)
+            driver.find_element_by_xpath('').send_keys(NAME)  # input field
+            driver.find_element_by_xpath('').send_keys(SURNAME)  # input field
+            driver.find_element_by_xpath('').send_keys(EMAIL)  # input field
+            driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field
+            driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field
+            # driver.find_element_by_xpath('').click()  # click on captcha
+            driver.find_element_by_xpath('').click()  # submit button
         else:
             driver.quit()
     except NoSuchElementException:
         print("Oooops , we have some problem !")
+
 
 def auth_form_name():
     try:
@@ -319,8 +308,8 @@ def auth_form_confirm_password():
         print("Oooops, we have some problem !")
         
 
-def click_on_captcha():
-    driver.find_element_by_xpath('').click()
+# def click_on_captcha():
+#    driver.find_element_by_xpath('').click()
 
 
 #  driver.back()
