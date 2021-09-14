@@ -65,7 +65,7 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
-#  CONSTS for validation
+# CONSTS for validation
 NAME = "Vasya"
 SURNAME = "Pupkin"
 EMAIL = "vasya_pupkin@gmail.com"  # it's a fake email
@@ -102,7 +102,7 @@ TC_21 = '<script>alert(«Hello, world!»)</script>'
 TC_22 = '<script>document.getElementByID(«…»).disabled=true</script>'
 TC_23 = 'abcdeABCDE'  # upper and lower cases
 TC_24 = '%%%%%%'
-TC_25 = '<'+f'{LOGIN}'+'>'  # need use valid user with angle brackets
+TC_25 = f'<{LOGIN}>'   # need use valid user with angle brackets
 TC_26 = 'логинпароль'  # kirilica alphabet
 TC_27 = ''  # checking ban for IP, for example 5 times possible to try login with wrong a password 
 TC_28 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111111111111111111111111111111111111111111111
@@ -114,7 +114,7 @@ TC_28 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx111111111111111111111
 
 cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
              TC_11, TC_12, TC_13, TC_14, TC_15, TC_16, TC_17, TC_18, TC_19,
-             TC_20, TC_21, TC_22, TC_23, TC_24, TC_25, TC_26, TC_27]         
+             TC_20, TC_21, TC_22, TC_23, TC_24, TC_25, TC_26, TC_27, TC_28]         
 
 # got to previous url use:  driver.back()
 # go to next url use:  driver.forward() 
