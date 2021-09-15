@@ -166,29 +166,16 @@ def auth_form_surname():
         driver.get("https://2ip.ru/")  # checking a proxy
         driver.implicitly_wait(20) 
         prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
-        # time.sleep(5)
         if prox == IP:
             driver.get("https://...")
-            # time.sleep(5)
             for item in cases_list: 
-                name_field = driver.find_element_by_xpath('')  # input field 
-                name_field.send_keys(NAME)
-                # tiem.sleep(1)
-                surname_field = driver.find_element_by_xpath('')  # input field 
-                surname_field.send_keys(item)
-                # time.sleep(1)  
-                email_field = driver.find_element_by_xpath('')  # input field 
-                email_field.send_keys(EMAIL)  
-                # time.sleep(1)  
-                password_field = driver.find_element_by_xpath('')  # input field 
-                password_field.send_keys(PASSWORD)
-                # time.sleep(1)
-                password_field = driver.find_element_by_xpath('')  # input field 
-                password_field.send_keys(CONFIRM_PASSWORD)         
-                # time.sleep(1)  
-                submit_button = driver.find_element_by_xpath('')  # submit button
-                submit_button.click() 
-                # time.sleep(5)  
+                driver.find_element_by_xpath('').send_keys(NAME)  # input field 
+                driver.find_element_by_xpath('').send_keys(item)  # input field 
+                driver.find_element_by_xpath('').send_keys(EMAIL)  # input field
+                driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field        
+                # driver.find_element_by_xpath('').click()  # click on captcha
+                driver.find_element_by_xpath('')click()  # submit button
         else:
             driver.quit()         
     except NoSuchElementException:
