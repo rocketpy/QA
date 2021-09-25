@@ -29,4 +29,15 @@ def test_2_browsers(browser, admin_browser):
     browser.visit('http://google.com')
     admin_browser.visit('http://admin.example.com')
 
+"""
+splinter_webdriver:
+Splinter's webdriver name to use. Fixture gets the value from the command-line option splinter-webdriver (see below).
+To make pytest-splinter always use certain webdriver, override a fixture in your conftest.py file:
+"""
+import pytest
+
+@pytest.fixture(scope='session')
+def splinter_webdriver():
+    """Override splinter webdriver name."""
+    return 'chrome'
 
