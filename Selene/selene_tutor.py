@@ -12,7 +12,6 @@ $ python setup.py install
 # or using pip:
 $ pip install git+https://github.com/yashaka/selene.git
 
-
 """
 Main features:
     User-oriented API for Selenium Webdriver (code like speak common English)
@@ -20,6 +19,8 @@ Main features:
     PageObjects support (all elements are lazy-evaluated objects)
     Automatic driver management (no need to install and setup driver for quick local execution)
 """
+
+# One more Example: https://github.com/yashaka/python-web-test
 
 # Quick Start
 from selene.support.shared import browser
