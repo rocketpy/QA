@@ -2,8 +2,16 @@
 
 # Github: https://github.com/yashaka/selene
 
-# Latest stable version:
+# Install latest stable version:
 # pip install selene
+
+# from sources
+# GIVEN webdriver and webdriver_manager are already installed
+$ git clone https://github.com/yashaka/selene.git
+$ python setup.py install
+# or using pip:
+$ pip install git+https://github.com/yashaka/selene.git
+
 
 """
 Main features:
