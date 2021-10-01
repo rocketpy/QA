@@ -68,9 +68,10 @@ chrome = webdriver.Chrome(chrome_options=options)
 # CONSTS for validation
 NAME = "Vasya"
 SURNAME = "Pupkin"
-EMAIL = "vasya_pupkin@gmail.com"  # it's a fake email
+EMAIL = "vasya_pupkin@mail.com"  # it's a fake email
 LOGIN = "v_pupkin"
 PASSWORD = "12345qwerty"
+PHONE_NUMBER = 555555555
 CONFIRM_PASSWORD = PASSWORD
 
 #  need change slice for each proxy !!!!!
@@ -131,6 +132,7 @@ def auth_form_valid():
             driver.find_element_by_xpath('').send_keys(SURNAME)  # input field
             driver.find_element_by_xpath('').send_keys(EMAIL)  # input field
             driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field
+            driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field            
             driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field
             # driver.find_element_by_xpath('').click()  # click on captcha
             driver.find_element_by_xpath('').click()  # submit button
@@ -152,6 +154,7 @@ def auth_form_name():
                 driver.find_element_by_xpath('').send_keys(SURNAME)  # input field 
                 driver.find_element_by_xpath('').send_keys(EMAIL)   # input field 
                 driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field                  
                 driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field        
                 # driver.find_element_by_xpath('').click()  # click on captcha
                 driver.find_element_by_xpath('').click()  # submit button
@@ -173,6 +176,7 @@ def auth_form_surname():
                 driver.find_element_by_xpath('').send_keys(item)  # input field 
                 driver.find_element_by_xpath('').send_keys(EMAIL)  # input field
                 driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field                  
                 driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field        
                 # driver.find_element_by_xpath('').click()  # click on captcha
                 driver.find_element_by_xpath('')click()  # submit button
@@ -194,6 +198,7 @@ def auth_form_email():
                 driver.find_element_by_xpath('').send_keys(SURNAME)  # input field 
                 driver.find_element_by_xpath('').send_keys(item)   # input field 
                 driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field                  
                 driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field    
                 # driver.find_element_by_xpath('').click()  # click on captcha
                 submit_button = driver.find_element_by_xpath('').click()  # submit button
@@ -216,6 +221,7 @@ def auth_form_password():
                 driver.find_element_by_xpath('').send_keys(SURNAME)  # input field 
                 driver.find_element_by_xpath('').send_keys(EMAIL)   # input field 
                 driver.find_element_by_xpath('').send_keys(item)  # input field 
+                driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field                  
                 driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field    
                 # driver.find_element_by_xpath('').click()  # click on captcha
                 submit_button = driver.find_element_by_xpath('').click()  # submit button
@@ -237,6 +243,7 @@ def auth_form_confirm_password():
                 driver.find_element_by_xpath('').send_keys(SURNAME)  # input field 
                 driver.find_element_by_xpath('').send_keys(EMAIL)   # input field 
                 driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(PHONE_NUMBER)  # input field                  
                 driver.find_element_by_xpath('').send_keys(item)  # input field    
                 # driver.find_element_by_xpath('').click()  # click on captcha
                 submit_button = driver.find_element_by_xpath('').click()  # submit button
