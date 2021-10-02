@@ -231,6 +231,29 @@ def auth_form_password():
         print("Oooops, we have some problem !")
 
 
+# phone_number
+def auth_form_phone_number():
+    try:
+        driver.get("https://2ip.ru/")  # checking a proxy
+        driver.implicitly_wait(20) 
+        prox = driver.find_element_by_xpath("//*[@id="d_clip_button"]/span").text
+        if prox == IP:
+            driver.get("https://...")
+            for item in cases_list: 
+                driver.find_element_by_xpath('').send_keys(NAME)  # input field 
+                driver.find_element_by_xpath('').send_keys(SURNAME)  # input field 
+                driver.find_element_by_xpath('').send_keys(EMAIL)   # input field 
+                driver.find_element_by_xpath('').send_keys(PASSWORD)  # input field 
+                driver.find_element_by_xpath('').send_keys(item)  # input field                  
+                driver.find_element_by_xpath('').send_keys(CONFIRM_PASSWORD)  # input field        
+                # driver.find_element_by_xpath('').click()  # click on captcha
+                driver.find_element_by_xpath('').click()  # submit button
+        else:
+            driver.quit()
+    except NoSuchElementException:
+        print("Oooops, we have some problem !")
+
+
 def auth_form_confirm_password():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
