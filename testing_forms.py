@@ -121,6 +121,10 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
 # go to next url use:  driver.forward() 
 
 
+# class LoginForm:
+#    def __init__(self):  
+
+
 def auth_form_valid():
     try:
         driver.get("https://2ip.ru/")  # checking a proxy
