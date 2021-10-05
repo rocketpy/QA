@@ -25,3 +25,19 @@ optional arguments:
   -install INSTALL  Install the browser driver, For example, 'chrome',
                     'firefox'.
 """
+
+# Simple Example
+import seldom
+
+
+class BaiduTest(seldom.TestCase):
+    def test_case(self):
+        self.open("https://www.baidu.com")
+        self.type(id_="kw", text="seldom")
+        self.click(css="#su")
+        self.assertTitle("seldom")
+
+
+if __name__ == '__main__':
+    seldom.main()
+
