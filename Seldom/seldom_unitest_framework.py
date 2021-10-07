@@ -3,6 +3,8 @@
 # PyPi: https://pypi.org/project/seldom/2.2.4/
 # Github: https://github.com/SeldomQA/seldom
 
+# Docs: https://seldomqa.readthedocs.io/en/latest/index.html
+
 # pip install seldom==2.2.4
 # or
 # pip install -U git+https://github.com/SeldomQA/seldom.git@master
@@ -70,5 +72,15 @@ class TestRequest(seldom.TestCase):
 
 if __name__ == '__main__':
     seldom.main(base_url="http://httpbin.org")
+    
+    
+# Run the test
+import seldom
+
+seldom.main()
+seldom.main(path="./")
+seldom.main(path="./test_dir/")
+seldom.main(path="./test_dir/test_sample.py")
+
 
 
