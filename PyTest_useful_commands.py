@@ -8,6 +8,10 @@ python -m pytest -q test_sample.py  # calling pytest through python
 
 py.test --markers  # show available markers
 
+--strict-markers # in the pytest command will allow you to be sure that all markers are registered in the pytest configuration. 
+
+pytest -m database_access  # if you only want the ones that need database access 
+
 
 # In order to create a reusable marker.
 """
