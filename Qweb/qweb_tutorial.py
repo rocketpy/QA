@@ -1,6 +1,7 @@
 # Qweb - Keyword based test automation for the web.
 
 # Github: https://github.com/qentinelqi/qweb
+# Home page: https://qentinel.com/qweb-open-source-automation-library/
 
 # Windows
 # pip install QWeb
@@ -42,3 +43,20 @@ ClickText   Sign-in     index=3
 ClickElement    xpath\=//button[@class="my_class"]   # xpath
 ClickItem       Increment quantity                   # alt text
 """
+
+# Working with tables
+"""
+UseTable    Firstname
+
+${row}=     GetTableRow     //last                        # returns 5
+${row}=     GetTableRow     //last    skip_header=True    # returns 4
+...
+${row}=     GetTableRow     Jim                           # returns 4
+${row}=     GetTableRow     Jim    skip_header=True       # returns 3
+
+${cell_value}=     GetCellText     r1c2                   # Returns "John", first name is column 2.
+
+${cell_value}=     GetCellText     r-1/c2                 # Returns "Tina", -1 points to last row
+${cell_value}=     GetCellText     r-2/c2                 # Returns "Jim", -2 points to second last row
+"""
+
