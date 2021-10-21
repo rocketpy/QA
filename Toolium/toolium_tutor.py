@@ -4,6 +4,10 @@
 # Github: https://github.com/telefonica/toolium
 
 # pip install toolium
+# or
+# git clone git@github.com:Telefonica/toolium-template.git
+# cd toolium-template
+# pip install -r requirements.txt
 
 # The main dependencies are:
     # Selenium: to test web applications in major browsers (Firefox, Chrome, Internet Explorer, Edge, Safari, Opera)
