@@ -1,4 +1,3 @@
-# Web scraper Python robot example
 from RPA.Browser.Selenium import Selenium
 
 
@@ -19,7 +18,6 @@ def store_screenshot(filename):
     browser_lib.screenshot(filename=filename)
 
 
-# Define a main() function that calls the other functions in order:
 def main():
     try:
         open_the_website("https://robocorp.com/docs/")
@@ -27,3 +25,7 @@ def main():
         store_screenshot("output/screenshot.png")
     finally:
         browser_lib.close_all_browsers()
+        
+
+if __name__ == "__main__":
+    main()
