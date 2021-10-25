@@ -1,1 +1,11 @@
+# Note the shell section:
 
+shell: python tasks.py
+
+# In this case, we tell Python to run the tasks.py file. You can customize the command for your needs.
+
+# For comparison, the typical Robot Framework command looks like this:
+
+shell: python -m robot --report NONE --outputdir output --logtitle "Task log" tasks.robot
+
+# In this case, we tell Python to run the robot module (python -m robot) with arguments.
