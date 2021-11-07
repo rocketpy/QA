@@ -6,3 +6,16 @@
 
 
 # pip install pytest-playwright
+
+# Examples:
+# Configure Mypy typings for auto-completion#
+
+# test_my_application.pyfrom playwright.sync_api import Page
+def test_visit_admin_dashboard(page: Page):
+    page.goto("/admin")
+    # ...
+    
+# Configure slow mo#
+# Run tests with slow mo with the --slowmo argument.
+
+# pytest --slowmo 100
