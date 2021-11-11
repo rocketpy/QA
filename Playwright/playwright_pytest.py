@@ -58,3 +58,12 @@ def test_visit_admin_dashboard(page: Page):
 def test_visit_example(page):
     page.goto("https://example.com")
     # ...
+    
+
+# Run on a specific browser#
+
+# conftest.pyimport pytest
+@pytest.mark.only_browser("chromium")
+def test_visit_example(page):
+    page.goto("https://example.com")
+    # ...
