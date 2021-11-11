@@ -49,3 +49,12 @@ def test_visit_admin_dashboard(page: Page):
 # Run tests with slow mo with the --slowmo argument.
 
 # pytest --slowmo 100
+
+
+# Skip test by browser
+
+# test_my_application.pyimport pytest
+@pytest.mark.skip_browser("firefox")
+def test_visit_example(page):
+    page.goto("https://example.com")
+    # ...
