@@ -18,3 +18,18 @@
 # run your tests via:
 # pytest tests/
 
+# example of reported test case with PageObejcts
+
+def test_ecosia():
+    ecosia.open()
+
+    ecosia.search('selene python')
+    ecosia.results\
+        .should_have_size_at_least(5)\
+        .should_have_text(0, 'User-oriented Web UI browser tests')
+
+    ecosia.results.follow_link(0)
+    github.should_be_on('yashaka/selene')
+
+
+
