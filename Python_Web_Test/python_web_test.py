@@ -31,5 +31,19 @@ def test_ecosia():
     ecosia.results.follow_link(0)
     github.should_be_on('yashaka/selene')
 
+"""
+reporting steps with automatic rendering of
 
+    underscores to spaces
+    inline params
+    context of step-function (object, class or module)
+    actions on raw selene elements
+
+last screenshot and page-source are attached to test body on failure
+
+use allure webserver to see reports with webui:
+
+# allure serve reports
+
+"""
 
