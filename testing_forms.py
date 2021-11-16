@@ -120,9 +120,18 @@ cases_list = [TC_1, TC_2, TC_3, TC_4, TC_5, TC_6, TC_7, TC_8, TC_9, TC_10,
 # got to previous url use:  driver.back()
 # go to next url use:  driver.forward() 
 
+"""
+class LoginForm:
 
-# class LoginForm:
-#    def __init__(self):  
+    NAME = "Vasya"
+    SURNAME = "Pupkin"
+    EMAIL = "vasya_pupkin@mail.com"  # it's a fake email
+    LOGIN = "v_pupkin"
+    PASSWORD = "12345qwerty"
+    PHONE_NUMBER = 555555555
+    CONFIRM_PASSWORD = PASSWORD
+    
+    def __init__(self):  
 
 
 def auth_form_valid():
@@ -144,6 +153,7 @@ def auth_form_valid():
             driver.quit()
     except NoSuchElementException:
         print("Oooops, we have some problem !")
+"""
 
 # user_name
 def auth_form_name():
