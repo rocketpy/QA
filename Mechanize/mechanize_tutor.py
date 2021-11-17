@@ -47,3 +47,18 @@ response2 = br.submit()
 # print currently selected form (don't call .submit() on this, use br.submit())
 print(br.form)
 
+response3 = br.back()  # back to cheese shop (same data as response1)
+# the history mechanism returns cached response objects
+# we can still use the response, even though it was .close()d
+response3.get_data()  # like .seek(0) followed by .read()
+response4 = br.reload()  # fetches from server
+
+for form in br.forms():
+    print(form)
+# .links() optionally accepts the keyword args of .follow_/.find_link()
+for link in br.links(url_regex="python.org"):
+    print(link)
+    br.follow_link(link)  # takes EITHER Link instance OR keyword args
+    br.back()
+
+
