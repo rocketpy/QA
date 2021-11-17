@@ -61,4 +61,12 @@ for link in br.links(url_regex="python.org"):
     br.follow_link(link)  # takes EITHER Link instance OR keyword args
     br.back()
 
+# control the browser’s policy by using the methods of mechanize. Browser’s base class, mechanize.UserAgent.
+# example:
 
+br = mechanize.Browser()
+# Explicitly configure proxies (Browser will attempt to set good defaults).
+# Note the userinfo ("joe:password@") and port number (":3128") are optional.
+br.set_proxies({"http": "joe:password@myproxy.example.com:3128",
+                "ftp": "proxy.example.com",
+                })
