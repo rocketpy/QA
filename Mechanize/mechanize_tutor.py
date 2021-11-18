@@ -70,3 +70,16 @@ br = mechanize.Browser()
 br.set_proxies({"http": "joe:password@myproxy.example.com:3128",
                 "ftp": "proxy.example.com",
                 })
+
+# Add HTTP Basic/Digest auth username and password for HTTP proxy access.
+
+# (equivalent to using "joe:password@..." form above)
+br.add_proxy_password("joe", "password")
+
+# Add HTTP Basic/Digest auth username and password for website access.
+br.add_password("http://example.com/protected/", "joe", "password")
+
+# Add an extra header to all outgoing requests, you can also
+# re-order or remove headers in this function.
+br.finalize_request_headers = lambda request, headers: headers.__setitem__(
+  'My-Custom-Header', 'Something')
