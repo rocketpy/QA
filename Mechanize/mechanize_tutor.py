@@ -83,3 +83,26 @@ br.add_password("http://example.com/protected/", "joe", "password")
 # re-order or remove headers in this function.
 br.finalize_request_headers = lambda request, headers: headers.__setitem__(
   'My-Custom-Header', 'Something')
+
+# Don't handle HTTP-EQUIV headers (HTTP headers embedded in HTML).
+br.set_handle_equiv(False)
+
+# Ignore robots.txt.  Do not do this without thought and consideration.
+br.set_handle_robots(False)
+
+# Don't add Referer (sic) header
+br.set_handle_referer(False)
+
+# Don't handle Refresh redirections
+br.set_handle_refresh(False)
+
+# Don't handle cookies
+br.set_cookiejar()
+# Supply your own mechanize.CookieJar (NOTE: cookie handling is ON by
+# default: no need to do this unless you have some reason to use a
+# particular cookiejar)
+br.set_cookiejar(cj)
+# Tell the browser to send the Accept-Encoding: gzip header to the server
+# to indicate it supports gzip Content-Encoding
+br.set_request_gzip(True)
+# Do not verify SSL certificates
