@@ -105,4 +105,21 @@ br.set_cookiejar(cj)
 # Tell the browser to send the Accept-Encoding: gzip header to the server
 # to indicate it supports gzip Content-Encoding
 br.set_request_gzip(True)
+
 # Do not verify SSL certificates
+
+import ssl
+
+
+br.set_ca_data(context=ssl._create_unverified_context(cert_reqs=ssl.CERT_NONE))
+# Log information about HTTP redirects and Refreshes.
+br.set_debug_redirects(True)
+# Log HTTP response bodies (i.e. the HTML, most of the time).
+br.set_debug_responses(True)
+# Print HTTP headers.
+br.set_debug_http(True)
+
+# To make sure you're seeing all debug output:
+logger = logging.getLogger("mechanize")
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.INFO)
