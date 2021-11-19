@@ -123,3 +123,21 @@ br.set_debug_http(True)
 logger = logging.getLogger("mechanize")
 logger.addHandler(logging.StreamHandler(sys.stdout))
 logger.setLevel(logging.INFO)
+
+
+# Sometimes it's useful to process bad headers or bad HTML:
+response = br.response()  # this is a copy of response
+headers = response.info()  # this is a HTTPMessage
+headers["Content-type"] = "text/html; charset=utf-8"
+response.set_data(response.get_data().replace("<!---", "<!--"))
+br.set_response(response)
+
+
+#  mechanize exports the complete interface of urllib2
+import mechanize
+
+
+response = mechanize.urlopen("http://www.example.com/")
+print(response.read())
+
+
