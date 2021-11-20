@@ -140,4 +140,14 @@ import mechanize
 response = mechanize.urlopen("http://www.example.com/")
 print(response.read())
 
+# Browser API
+# https://mechanize.readthedocs.io/en/latest/browser_api.html#mechanize.Browser.open
+
+# API documentation for the mechanize Browser object. Create a mechanize Browser instance as:
+from mechanize import Browser
+
+br = Browser()
+
+
+
 
