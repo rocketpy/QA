@@ -31,3 +31,20 @@ state = state.next(home.event.sun.twilight.civil.Event.Sunrise)
 
 state.compute()
 'Opened'
+
+
+# Default state is Off.
+
+import home
+
+
+p = home.appliance.light.presence.Appliance("an indoor presence light", [])
+_, new = p.notify(home.appliance.light.event.forced.Event.On)
+new.compute()
+# 'Forced On'
+_, new = p.notify(home.event.presence.Event.Off)
+# new.compute()
+# 'Off'
+_, new = p.notify(home.event.presence.Event.On)
+# new.compute()
+# 'Off'
