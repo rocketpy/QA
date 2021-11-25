@@ -14,3 +14,20 @@
     # Appium-Python-Client: to test mobile applications (native, hybrid or web) in Android or iOS devices/emulators.
     # requests: to test APIs
 
+    
+#  Example of a page object definition:
+
+from toolium.pageobjects.page_object import PageObject
+from toolium.pageelements import InputText, Button
+
+
+class LoginPageObject(PageObject):
+    username = InputText(By.ID, 'username')
+    password = InputText(By.ID, 'password')
+    login_button = Button(By.XPATH, "//form[@id='login']/button")
+
+    def login(self, username, password):
+        self.username.text = username
+        self.password.text = password
+        self.login_button.click()
+
