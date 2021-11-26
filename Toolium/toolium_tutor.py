@@ -30,4 +30,20 @@ class LoginPageObject(PageObject):
         self.username.text = username
         self.password.text = password
         self.login_button.click()
+        
 
+# Example of a test using the previous page object:
+
+def test_login(self):
+    LoginPageObject().login('user', 'pass')
+    ...
+
+#  Methods
+
+username = InputText(By.ID, 'username')
+
+# Get text value
+input_value = username.text
+
+# Set text value
+username.text = 'username'
