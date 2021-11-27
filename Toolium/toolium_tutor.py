@@ -53,3 +53,11 @@ username.text = 'username'
 # Check if the element is enabled
 enabled = username.web_element.is_enabled()
 
+# Parent
+
+form = PageElement(By.XPATH, "//form[@id='login']")
+login_button = Button(By.XPATH, "./button", parent=form)
+
+# Shadowroot
+login_button = Button(By.CSS_SELECTOR, "css_selector", shadowroot="shadowroot_css_selector")
+
