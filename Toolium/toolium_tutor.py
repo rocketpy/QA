@@ -61,3 +61,8 @@ login_button = Button(By.XPATH, "./button", parent=form)
 # Shadowroot
 login_button = Button(By.CSS_SELECTOR, "css_selector", shadowroot="shadowroot_css_selector")
 
+# webview_context_selection_callback:
+login_button = Button(By.XPATH, "//*[@data-qsysid='subscription-counters']/div/div/", webview=True,
+                      webview_context_selection_callback = webview_context_selector_per_url,
+                      webview_csc_args = [driver_wrapper, WebviewConfigHelper.get_helper().account])
+
