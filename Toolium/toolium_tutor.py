@@ -47,3 +47,9 @@ input_value = username.text
 
 # Set text value
 username.text = 'username'
+
+# username = InputText(By.ID, 'username')
+
+# Check if the element is enabled
+enabled = username.web_element.is_enabled()
+
