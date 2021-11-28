@@ -66,3 +66,21 @@ login_button = Button(By.XPATH, "//*[@data-qsysid='subscription-counters']/div/d
                       webview_context_selection_callback = webview_context_selector_per_url,
                       webview_csc_args = [driver_wrapper, WebviewConfigHelper.get_helper().account])
 
+
+#  Group is a page element that contains other child page elements
+from toolium.pageobjects.page_object import PageObject
+from toolium.pageelements import InputText, Button, Group
+
+
+class Form(Group):
+    username = InputText(By.ID, 'username')
+    password = InputText(By.ID, 'password')
+    login_button = Button(By.XPATH, "./button")
+
+class LoginPageObject(PageObject):
+    form = Form(By.XPATH, "//form[@id='login']")
+
+    def login(self, username, password):
+        self.form.username.text = username
+        self.form.password.text = password
+        self.form.login_button.click()
