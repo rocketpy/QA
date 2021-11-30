@@ -84,3 +84,26 @@ class LoginPageObject(PageObject):
         self.form.username.text = username
         self.form.password.text = password
         self.form.login_button.click()
+
+
+# multiple page elements
+inputs = InputTexts(By.XPATH, '//input')
+
+for input in inputs.page_elements:
+    input.clear()
+    
+    
+# Concurrency issues
+from toolium.pageobjects.page_object import PageObject
+from toolium.pageelements import InputText, Button
+
+class LoginPageObject(PageObject):
+    def init_page_elements(self):
+        self.username = InputText(By.ID, 'username')
+        self.password = InputText(By.ID, 'password')
+        self.login_button = Button(By.XPATH, "//form[@id='login']/button")
+
+    def login(self, username, password):
+        self.username.text = username
+        self.password.text = password
+        self.login_button.click()
