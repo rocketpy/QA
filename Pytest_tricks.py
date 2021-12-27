@@ -54,3 +54,29 @@ def cmdopt(request):
 $ pytest -q test_sample.py
 
 
+# Command line option arrived in our test.
+# Add simple validation for the input by listing the choices:
+
+# content of conftest.py
+import pytest
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--cmdopt",
+        action="store",
+        default="type1",
+        help="my option: type1 or type2",
+        choices=("type1", "type2"),
+    )
+
+    
+# get feedback on a bad argument:
+
+$ pytest -q --cmdopt=type3
+# ERROR: usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+# pytest: error: argument --cmdopt: invalid choice: 'type3' (choose from 'type1', 'type2')
+
+
+
+
