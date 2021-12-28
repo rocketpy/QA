@@ -4,6 +4,12 @@
 
 #  pip install Appium-Python-Client
 
+# Install from source via GitHub.
+# git clone git@github.com:appium/python-client.git
+# cd python-client
+# python setup.py install
+
+
 # Android environment
 import unittest
 from appium import webdriver
@@ -58,5 +64,21 @@ self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps, dir
 # self.driver.find_element_by_xpath("//android.widget.EditText[@index='0']").send_keys("XXXXX")
 # or
 # self.driver.find_element_by_xpath("//android.widget.EditText[@index='1']").send_keys("XXXXX")
+
+
+#  For example, the below action builder is to replace the default one with the touch pointer action.
+from selenium.webdriver.common.actions import interaction
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+
+
+actions = ActionChains(driver)
+# override as 'touch' pointer action
+actions.w3c_actions = ActionBuilder(driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
+actions.w3c_actions.pointer_action.move_to_location(start_x, start_y)
+actions.w3c_actions.pointer_action.pointer_down()
+actions.w3c_actions.pointer_action.pause(2)
+actions.w3c_actions.pointer_action.move_to_location(end_x, end_y)
+actions.w3c_actions.pointer_action.release()
+actions.perform()
 
 
