@@ -54,7 +54,8 @@ desired_caps = dict(platformName = 'iOS'
                     app = PATH('../../apps/UICatalog.app.zip')
                     )
 
-self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps, direct_connection=True)
+self.driver = webdriver.Remote('http://localhost:4723/wd/hub',
+                               desired_caps, direct_connection=True)
 
 
 # find element in appium using text
@@ -73,12 +74,42 @@ from selenium.webdriver.common.actions.action_builder import ActionBuilder
 
 actions = ActionChains(driver)
 # override as 'touch' pointer action
-actions.w3c_actions = ActionBuilder(driver, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
+actions.w3c_actions = ActionBuilder(driver,
+                                    mouse=PointerInput(interaction.POINTER_TOUCH,
+                                                       "touch"))
 actions.w3c_actions.pointer_action.move_to_location(start_x, start_y)
 actions.w3c_actions.pointer_action.pointer_down()
 actions.w3c_actions.pointer_action.pause(2)
 actions.w3c_actions.pointer_action.move_to_location(end_x, end_y)
 actions.w3c_actions.pointer_action.release()
 actions.perform()
+
+
+#  Direct Connect URLs
+"""
+If your Selenium/Appium server decorates the new session capabilities response with the following keys:
+
+    directConnectProtocol
+    directConnectHost
+    directConnectPort
+    directConnectPath
+
+Then python client will switch its endpoint to the one specified by the values of those keys.
+"""
+
+import unittest
+from appium import webdriver
+
+
+desired_caps = dict(
+    platformName='iOS',
+    platformVersion='13.4',
+    automationName='xcuitest',
+    deviceName='iPhone Simulator',
+    app=PATH('../../apps/UICatalog.app.zip')
+)
+
+self.driver = webdriver.Remote('http://localhost:4723/wd/hub',
+                               desired_caps, direct_connection=True)
 
 
