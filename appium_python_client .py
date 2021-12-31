@@ -9,6 +9,37 @@
 # cd python-client
 # python setup.py install
 
+# Development
+"""
+    Code Style: PEP-0008
+        Apply black, isort and mypy as pre commit hook
+        Run make command for development. See make help output for details
+    Docstring style: Google Style
+    gitchangelog generates CHANGELOG.rst
+"""
+
+# Setup
+"""
+    pip install --user pipenv
+    python -m pipenv lock --clear
+        If you experience Locking Failed! unknown locale: UTF-8 error, then refer pypa/pipenv#187 to solve it.
+    python -m pipenv install --dev --system
+    pre-commit install
+"""
+
+# Run tests
+# You can run all of tests running on CI via tox in your local.
+# $ tox
+
+# Unit
+# $ pytest test/unit
+
+# Run with pytest-xdist
+$ pytest -n 2 test/unit
+
+# Functional
+# $ pytest test/functional/ios/search_context/find_by_ios_class_chain_tests.py
+
 
 # Android environment
 import unittest
