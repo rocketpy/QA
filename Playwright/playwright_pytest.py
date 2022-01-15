@@ -7,14 +7,16 @@
 
 # pip install pytest-playwright
 
-# Usage#
 
-# pip install pytest-playwright
+# Usage
+# Use the page fixture to write a basic test. See more examples.
 
-Use the page fixture to write a basic test. See more examples.
+# test_my_application.py
+def test_example_is_working(page):
+    page.goto("https://example.com")    
+    page.click("text=More information")
+    assert page.inner_text('h1') == 'Example Domain'    
 
-# test_my_application.pydef test_example_is_working(page):
-# page.goto("https://example.com")    assert page.inner_text('h1') == 'Example Domain'    page.click("text=More information")
 
 # To run your tests, use pytest CLI.
 
